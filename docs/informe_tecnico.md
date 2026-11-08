@@ -148,11 +148,17 @@ El proceso permitió identificar dificultades de calidad de datos y documentar l
 
 La utilización de Python, Pandas, NumPy y Jupyter Notebook facilitó la organización y verificación del procesamiento realizado.
 
-## 9. Referencias preliminares
+
+## 9. Referencias bibliográficas
 
 - Consejo Nacional de Educación. (s. f.). *INDICES: Estadísticas y bases de datos de educación superior*. https://www.cned.cl/
+
 - Python Software Foundation. (s. f.). *Python documentation*. https://docs.python.org/3/
+
 - pandas development team. (s. f.). *pandas documentation*. https://pandas.pydata.org/docs/
+
 - NumPy Developers. (s. f.). *NumPy documentation*. https://numpy.org/doc/
 
-**Pendiente:** Completar al menos cinco referencias bibliográficas pertinentes, verificar sus datos y adecuarlas a APA 7 antes de entregar el informe.
+- Project Jupyter. (s. f.). *Project Jupyter documentation*. https://docs.jupyter.org/en/latest/
+
+- GitHub. (s. f.). *GitHub Docs*. https://docs.github.com/
