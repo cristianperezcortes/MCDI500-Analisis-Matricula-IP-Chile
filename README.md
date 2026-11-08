@@ -63,3 +63,17 @@ El informe técnico y el mapa conceptual están disponibles en la carpeta `docs`
 ## Equipo de Trabajo
 Cristian Pérez Cortés 
 Claudio Navarrete Sims
+
+## Fuente y alcance de los datos
+
+El proyecto utiliza información oficial del Consejo
+Nacional de Educación (CNED), correspondiente a la
+matrícula de Institutos Profesionales de Chile
+durante el año 2025.
+
+El conjunto de datos seleccionado contiene 4.731
+registros de 27 Institutos Profesionales.
+
+El análisis considera procesos de selección,
+limpieza, transformación y validación de datos,
+documentados en los notebooks del proyecto.
