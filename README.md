@@ -59,3 +59,7 @@ El archivo procesado se encuentra en `data/processed/matricula_ip_2025_procesada
 ## Documentación
 
 El informe técnico y el mapa conceptual están disponibles en la carpeta `docs`.
+
+## Equipo de Trabajo
+Cristian Perez Cortés 
+Claudio Navarrete Sims
