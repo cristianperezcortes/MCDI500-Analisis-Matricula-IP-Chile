@@ -4,7 +4,7 @@
 **Asignatura:** MCDI500 – Programación para la Ciencia de Datos  
 **Programa:** Magíster en Ciencia de Datos e Inteligencia Artificial  
 **Universidad:** Universidad Andrés Bello (UNAB)  
-**Integrantes:** [Completar nombres]  
+**Integrantes:** Cristian Pérez Cortés y Claudio Navarrete Sims  
 **Fecha:** Noviembre de 2026
 
 ---
