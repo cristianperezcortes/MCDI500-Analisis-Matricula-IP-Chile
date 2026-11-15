@@ -1,0 +1,202 @@
+{
+  "fecha_utc": "2026-11-15T18:28:21+00:00",
+  "tipo": "revisión interna, no nota docente",
+  "integracion_excel": true,
+  "notebooks": {
+    "F1": {
+      "total": 19,
+      "codigo": 8,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "errores": 0
+    },
+    "F2": {
+      "total": 22,
+      "codigo": 10,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "errores": 0
+    },
+    "F3": {
+      "total": 22,
+      "codigo": 10,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "errores": 0
+    }
+  },
+  "controles": [
+    {
+      "control": "archivo:F1/F1_Definicion_Cned.ipynb",
+      "aprobado": true,
+      "evidencia": "F1/F1_Definicion_Cned.ipynb"
+    },
+    {
+      "control": "archivo:F2/F2_Preprocesamiento_Cned.ipynb",
+      "aprobado": true,
+      "evidencia": "F2/F2_Preprocesamiento_Cned.ipynb"
+    },
+    {
+      "control": "archivo:F3/S2_F3_NucleoAlgoritmico_Cned.ipynb",
+      "aprobado": true,
+      "evidencia": "F3/S2_F3_NucleoAlgoritmico_Cned.ipynb"
+    },
+    {
+      "control": "archivo:src/cned_pipeline.py",
+      "aprobado": true,
+      "evidencia": "src/cned_pipeline.py"
+    },
+    {
+      "control": "archivo:src/f3_transformaciones.py",
+      "aprobado": true,
+      "evidencia": "src/f3_transformaciones.py"
+    },
+    {
+      "control": "archivo:src/f3_pipeline.py",
+      "aprobado": true,
+      "evidencia": "src/f3_pipeline.py"
+    },
+    {
+      "control": "archivo:src/f3_medicion.py",
+      "aprobado": true,
+      "evidencia": "src/f3_medicion.py"
+    },
+    {
+      "control": "archivo:src/f3_recursion.py",
+      "aprobado": true,
+      "evidencia": "src/f3_recursion.py"
+    },
+    {
+      "control": "archivo:docs/f3_s02_entregable_g8.docx",
+      "aprobado": true,
+      "evidencia": "docs/f3_s02_entregable_g8.docx"
+    },
+    {
+      "control": "archivo:docs/f3_s02_entregable_g8.pdf",
+      "aprobado": true,
+      "evidencia": "docs/f3_s02_entregable_g8.pdf"
+    },
+    {
+      "control": "archivo:evidencias/f3_benchmarks.csv",
+      "aprobado": true,
+      "evidencia": "evidencias/f3_benchmarks.csv"
+    },
+    {
+      "control": "archivo:evidencias/f3_equivalencia_f2.json",
+      "aprobado": true,
+      "evidencia": "evidencias/f3_equivalencia_f2.json"
+    },
+    {
+      "control": "archivo:tests/test_f3_regresion_portatil.py",
+      "aprobado": true,
+      "evidencia": "tests/test_f3_regresion_portatil.py"
+    },
+    {
+      "control": "archivo:requirements.txt",
+      "aprobado": true,
+      "evidencia": "requirements.txt"
+    },
+    {
+      "control": "notebook:F1",
+      "aprobado": true,
+      "evidencia": "8 celdas ejecutadas y 0 errores"
+    },
+    {
+      "control": "notebook:F2",
+      "aprobado": true,
+      "evidencia": "10 celdas ejecutadas y 0 errores"
+    },
+    {
+      "control": "notebook:F3",
+      "aprobado": true,
+      "evidencia": "10 celdas ejecutadas y 0 errores"
+    },
+    {
+      "control": "benchmark:replicable",
+      "aprobado": true,
+      "evidencia": "6 filas, 3 tamaños, 2 algoritmos, tiempos y memoria"
+    },
+    {
+      "control": "informe:benchmark_concordante",
+      "aprobado": true,
+      "evidencia": "tabla DOCX coincide con CSV de evidencia en los seis registros"
+    },
+    {
+      "control": "informe:sin_marcadores_md",
+      "aprobado": true,
+      "evidencia": "no aparecen marcas Markdown literales en el DOCX"
+    },
+    {
+      "control": "informe:seis_apartados",
+      "aprobado": true,
+      "evidencia": "portada/índice, soluciones algorítmicas, POO, GitHub, notebook y bibliografía"
+    },
+    {
+      "control": "informe:referencias",
+      "aprobado": true,
+      "evidencia": "2 fuentes docentes + documentación oficial + libro técnico de 2022"
+    },
+    {
+      "control": "informe:pdf",
+      "aprobado": true,
+      "evidencia": "PDF generado y verificable; cotejo de la plantilla Canvas permanece pendiente"
+    },
+    {
+      "control": "informe:formato_carta",
+      "aprobado": true,
+      "evidencia": "7 páginas, cada una de 612×792 puntos (carta)"
+    },
+    {
+      "control": "informe:pdf_cifras",
+      "aprobado": true,
+      "evidencia": "PDF coincide con seis tiempos del CSV y no contiene marcas Markdown"
+    },
+    {
+      "control": "origen:sha256",
+      "aprobado": true,
+      "evidencia": "Hash observado 0439bc1ed1a6ec018a3bbf4be34861bd33749c81c34c2eeeddbc7dcd2657c48a; no modificar el Excel original"
+    },
+    {
+      "control": "datos:f2_f3",
+      "aprobado": true,
+      "evidencia": "comparación exhaustiva F2=F3; 4.731×68; matrículas 137.481 y 439.607"
+    }
+  ],
+  "aprobados": 27,
+  "fallidos": [],
+  "pendientes_externos": [
+    "plantilla institucional de Canvas",
+    "confirmación docente de grupo de dos",
+    "fecha y URL oficiales de origen del XLSX",
+    "revisión y contribución independiente de Cristian",
+    "entrega en Canvas"
+  ]
+}

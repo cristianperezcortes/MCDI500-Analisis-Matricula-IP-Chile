@@ -1,7 +1,7 @@
 ﻿filas,algoritmo,rondas,repeticiones_por_ronda,tiempo_minimo_ms,tiempo_mediana_ms,memoria_pico_mib,grupos,equivalencia_validada
-250,bucle_por_grupo,3,3,0.535,0.542,0.0108,2,True
-250,pandas_groupby,3,3,0.418,0.43,0.0176,2,True
-1000,bucle_por_grupo,3,3,1.693,1.816,0.034,8,True
-1000,pandas_groupby,3,3,0.493,0.53,0.0584,8,True
-4731,bucle_por_grupo,3,3,9.236,9.329,0.1356,27,True
-4731,pandas_groupby,3,3,0.928,0.96,0.2383,27,True
+250,bucle_por_grupo,3,3,0.613,0.617,0.0108,2,True
+250,pandas_groupby,3,3,0.39,0.412,0.0176,2,True
+1000,bucle_por_grupo,3,3,1.755,1.886,0.034,8,True
+1000,pandas_groupby,3,3,0.597,0.641,0.0584,8,True
+4731,bucle_por_grupo,3,3,9.241,9.894,0.1356,27,True
+4731,pandas_groupby,3,3,0.815,0.827,0.2383,27,True

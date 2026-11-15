@@ -28,3 +28,24 @@ La tabla constituye una **lista de evidencias**, no una nota asignada ni una pre
 6. **Fuente CNED:** usar el Excel original con hash, pero dejar constancia de que falta URL y fecha exacta de descarga de la edición 2005–2026.
 
 **Restricción de integridad académica:** la redacción y las decisiones deben ser comprendidas y revisadas por los integrantes, conforme a las normas de la universidad sobre ayudas tecnológicas; no se altera el historial ni se simulan actuaciones humanas.
+
+## Auditoría adicional del 15 de noviembre de 2026
+
+Se realizó una segunda revisión de código, evidencias, notebooks, informe y compatibilidad con la rúbrica. Este registro es técnico y no sustituye la calificación del profesor.
+
+| Comprobación | Evidencia observada | Estado |
+|---|---|---|
+| Pruebas con Excel original | `python -m pytest -q tests`: **44 aprobadas, 0 fallidas, 0 omitidas** | Completo en ambiente de desarrollo |
+| Reproducibilidad sin Excel | `tests/test_f3_regresion_portatil.py`: 4 pruebas sobre 120 registros **sintéticos**, con NA/UF, ceros y clases | Completo; no sustituye base real |
+| Equivalencia F2–F3 | `pd.testing.assert_frame_equal(check_exact=True)` sobre 4.731 filas y 68 columnas | Completo |
+| Integridad de la fuente | SHA-256 del XLSX idéntico al metadato F1 | Completo en ambiente de desarrollo |
+| Concordancia informe/benchmark | CSV, tabla DOCX, PDF, figura y salida del notebook ahora comparten la ejecución registrada | **Desacople anterior corregido** |
+| Índice y PDF | Word con campo de índice; PDF de 7 páginas, carta 612×792 puntos, sin marcas `**` literales | Completo técnicamente |
+| Auditoría automatizada complementaria | `python scripts/auditar_entrega_f3.py --integracion`: **27/27 controles** | Completo en ambiente de desarrollo |
+| Acciones en GitHub | Flujo ejecuta pruebas sin Excel más auditoría documental; integración CNED se mantiene local | Confirmar nuevo run después de publicar |
+
+**Benchmark vigente de 4.731 registros:** bucle por grupo = **9.241 ms** y `pandas.groupby` = **0.815 ms** de tiempo mínimo por ejecución, una relación aproximada de **11,3×** en el entorno de ensayo. Memoria pico medida con `tracemalloc`: 0.1356 y 0.2383 MiB, respectivamente. Estas cifras no prueban mejoras universales y deben citarse junto con la versión del archivo `evidencias/f3_benchmarks.csv`.
+
+**Hallazgo corregido:** el informe anterior presentaba otros tiempos derivados de una ejecución distinta del mismo benchmark. Se reemplazaron las seis cifras de la tabla, la frase explicativa y la figura para que coincidan con el notebook y el CSV guardados. El criterio de eficiencia requiere concordancia, no elegir la medición de mayor aceleración.
+
+**Riesgos pendientes antes de entregar:** (1) plantilla institucional descargada en Canvas; (2) consentimiento del docente para dos integrantes; (3) contribuciones y ejecución independientes de Cristian; (4) procedencia exacta de la edición XLSX 2005–2026; (5) entrega efectiva en Canvas. No se certifican estos aspectos sin evidencia humana.

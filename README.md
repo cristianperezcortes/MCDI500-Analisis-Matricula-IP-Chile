@@ -1,4 +1,4 @@
-# MCDI500 — Proyecto CNED IP 2025 (Sumativa 1, Fases 1 y 2)
+# MCDI500 — Proyecto CNED IP 2025 (Fases 1, 2 y 3)
 
 **Asignatura:** Programación para la Ciencia de Datos. **Programa:** Magíster en Ciencia de Datos e Inteligencia Artificial (UNAB). **Docente:** Omar Iván Salinas Silva.
 **Grupo 8 — integrantes confirmados por el equipo:** Cristian Pérez Cortés y Claudio Navarrete Sims. Óscar Quezada y Carlos Vergara **no** integran este grupo de trabajo. **Nota administrativa:** la guía menciona grupos de 3–4 estudiantes; se debe comunicar al docente que el Grupo 8 está formado por 2 y solicitar su validación formal, sin atribuir dicha aprobación antes de recibirla.
@@ -70,17 +70,17 @@ python -m jupyterlab
 - Se comparan eliminación, media global, mediana global y mediana jerárquica, con enmascaramiento 10%, MAE y desviación antes/después, semilla 42.
 - Las variables transformadas derivadas tienen banderas; se generan one-hot de nivel, escala 0–1 y log1p sin alterar los conteos de matrícula.
 - Se conservan los 4.731 registros y se documenta la anomalía temporal de IP Santo Tomás mediante sensibilidad.
-- F3 y F4 permanecen **proyectadas**, no se afirman realizadas.
+- **F3 implementada y revisada:** núcleo POO, equivalencia estricta F2–F3, benchmarks y pruebas sintéticas autónomas; **F4 permanece pendiente**.
 
 ## Colaboración GitHub
 Repositorio original: https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile
 
 La rama `main` representa la entrega original. Los cambios correctivos F1/F2 están en `fix/sumativa1-cned-guia-integrada-20261114` y PR #1; F3 se integra mediante una rama y PR independientes. Solo se registran commits con autor y fecha reales. Convención sugerida: `docs:`, `feat:`, `fix:`, `test:`. No se puede reconstruir retrospectivamente el historial original ni acreditar aportes de integrantes no confirmados.
 
-**Pendiente externo:** se requiere clon e instalación por Cristian o Claudio en otro computador, autorización docente de la conformación de dos integrantes (la guía indica 3–4), URL oficial de la versión 2005–2026 y autorización de escritura para publicar los cambios.
+**Pendiente externo:** clon e instalación por Cristian en otro computador, confirmación del docente sobre el equipo de dos integrantes, procedencia exacta de la versión XLSX 2005–2026, plantilla Canvas y entrega oficial. La escritura en las ramas de revisión ya fue verificada y los PR están publicados.
 
 ## Sumativa 2 (F3) — ejecución y controles
 
-El notebook F3 está en `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb` y su informe final, en `docs/f3_s02_entregable_g8.pdf` (archivo nombrado con 20 caracteres antes de `.pdf`). Requiere ejecutar previamente F2 y disponer del Excel en `data/raw/`. Las pruebas incluyen herencia, polimorfismo, encapsulamiento, casos límite, equivalencia exacta del DataFrame F2/F3, `timeit` y `tracemalloc`; los resultados medidos están en `evidencias/f3_benchmarks.csv`.
+El notebook F3 está en `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb` y su informe final, en `docs/f3_s02_entregable_g8.pdf` (archivo nombrado con 20 caracteres antes de `.pdf`). Requiere ejecutar previamente F2 y disponer del Excel en `data/raw/`. Las pruebas incluyen herencia, polimorfismo, encapsulamiento, casos límite, equivalencia exacta del DataFrame F2/F3, `timeit` y `tracemalloc`; los resultados medidos están en `evidencias/f3_benchmarks.csv`. La auditoría interna adicional se ejecuta con `python scripts/auditar_entrega_f3.py` (sin Excel) o `python scripts/auditar_entrega_f3.py --integracion` (con los datos reales generados por F2).
 
-El flujo `.github/workflows/validar_mcdi500.yml` ejecuta verificaciones sin Excel en GitHub Actions. **Esta CI no sustituye la prueba real de integración** porque la fuente original no está en el repositorio. Para la validación completa deben ejecutar `python -m pytest -q tests` después de generar el extracto de F2.
+El flujo `.github/workflows/validar_mcdi500.yml` ejecuta verificaciones sin Excel en GitHub Actions, incluida una prueba de integración F2–F3 sobre un dataset **sintético**. **Esta CI no sustituye la prueba real de integración** porque la fuente original no está en el repositorio. Para la validación completa deben ejecutar `python -m pytest -q tests` después de generar el extracto de F2.
