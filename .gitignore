@@ -1,7 +1,16 @@
-
 .venv/
 __pycache__/
+.pytest_cache/
 .ipynb_checkpoints/
-*.pyc
+*.py[cod]
 .DS_Store
-data/raw/
+.env
+# Los datos originales no se versionan: se descargan del CNED.
+data/raw/*
+!data/raw/README.md
+# El extracto intermedio se genera desde F2 con la fuente original.
+data/interim/*.csv
+# Los resultados de F2, que cambian con la metodología, se generan en la ejecución.
+data/processed/*.csv
+# Registros de ejecución automáticos: preservarlos como evidencia en la entrega.
+!data/processed/.gitkeep
