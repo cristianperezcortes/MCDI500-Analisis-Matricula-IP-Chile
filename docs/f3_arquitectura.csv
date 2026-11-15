@@ -1,0 +1,8 @@
+﻿componente,archivo,responsabilidad
+TransformadorCNED,src/f3_transformaciones.py,"contrato base, validación y estado"
+DepuradorEstructura,src/f3_transformaciones.py,"calidad de datos, reuso de F2"
+ImputadorSelectivo,src/f3_transformaciones.py,estrategias y banderas de imputación
+ConstructorVariables,src/f3_transformaciones.py,variables analíticas derivadas
+PipelineCNED,src/f3_pipeline.py,composición polimórfica
+comparar_algoritmos,src/f3_medicion.py,"timeit, memoria y equivalencia"
+aplanar_metadatos,src/f3_recursion.py,recursión de estructura anidada

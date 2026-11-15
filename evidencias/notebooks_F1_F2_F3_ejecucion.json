@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-11-15",
+  "entorno": "Python 3.13, ejecución independiente de cada notebook con nbclient y kernel limpio",
+  "notebooks": {
+    "F1/F1_Definicion_Cned.ipynb": {"codigo":8,"numeracion_continua":true,"errores":0,"segundos":30.63},
+    "F2/F2_Preprocesamiento_Cned.ipynb": {"codigo":10,"numeracion_continua":true,"errores":0,"segundos":32.66},
+    "F3/S2_F3_NucleoAlgoritmico_Cned.ipynb": {"codigo":10,"numeracion_continua":true,"errores":0,"segundos":4.13}
+  },
+  "pytest": {"aprobadas":40,"fallidas":0},
+  "equivalencia_f2_f3": true,
+  "restricciones": ["Ejecución por notebooks separados: el entorno disponible reportó fallo intermitente del kernel al encadenarlos; cada uno finalizó correctamente tras reintento", "La CI no ejecuta prueba de equivalencia del Excel original si no dispone del archivo no versionado"]
+}

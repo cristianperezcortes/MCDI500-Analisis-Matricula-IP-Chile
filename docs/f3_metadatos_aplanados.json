@@ -1,0 +1,10 @@
+{
+  "proyecto.nombre": "Matrícula IP 2025",
+  "proyecto.fases.F1": "definición",
+  "proyecto.fases.F2": "datos",
+  "proyecto.fases.F3": "POO",
+  "fuente.institucion": "CNED",
+  "fuente.año": 2025,
+  "evidencia.filas": 4731,
+  "evidencia.instituciones": 27
+}
