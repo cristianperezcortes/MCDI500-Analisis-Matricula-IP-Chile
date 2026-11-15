@@ -1,0 +1,45 @@
+name: MCDI500 - validación continua
+
+on:
+  push:
+    branches: [main, 'fix/**', 'feat/**']
+  pull_request:
+    branches: [main, 'fix/**']
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Instalar dependencias reproducibles
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Validar sintaxis de módulos
+        run: python -m compileall -q src tests scripts
+      - name: Validar formato de notebooks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import nbformat
+          for ruta in sorted(Path('.').glob('F*/*.ipynb')):
+              nb=nbformat.read(ruta,as_version=4)
+              nbformat.validate(nb)
+              print('[OK]',ruta)
+          PY
+      - name: Pruebas unitarias (sin base original)
+        run: python -m pytest -q tests --junitxml=evidencias/pytest_ci.xml
+      - name: Guardar reporte de pruebas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pruebas-mcdi500
+          path: evidencias/pytest_ci.xml
+
+# Advertencia: el Excel de ~60 MB NO se versiona. La equivalencia completa
+# F2/F3 se ejecuta por separado con la fuente disponible en data/raw/.
