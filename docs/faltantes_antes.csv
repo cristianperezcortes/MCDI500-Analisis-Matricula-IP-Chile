@@ -1,0 +1,63 @@
+﻿variable,faltantes,porcentaje_faltante,tipo
+Máximo Puntaje (promedio matemáticas y lenguaje),4731,100.0,string
+Máximo Puntaje NEM,4731,100.0,string
+Máximo Puntaje Ranking,4731,100.0,string
+Mínimo Puntaje (promedio matemáticas y lenguaje),4731,100.0,string
+Mínimo Puntaje NEM,4731,100.0,string
+Mínimo Puntaje Ranking,4731,100.0,string
+Nº Alumnos Ingreso Via PSU o PDT,4731,100.0,float64
+Promedio Puntaje (promedio matemáticas y lenguaje),4731,100.0,string
+Promedio Puntaje NEM,4731,100.0,string
+Promedio Puntaje Ranking,4731,100.0,string
+Puntaje de corte (primer seleccionado),4731,100.0,string
+Puntaje de corte (promedio de la carrera),4731,100.0,string
+Puntaje de corte (último seleccionado),4731,100.0,string
+Grado Académico,4727,99.915,string
+Mención o Especialidad,4346,91.862,string
+Nombre del Campus,2747,58.064,string
+Cód. Campus,2674,56.521,string
+Nº Alumnos Ingreso Otra Via,1593,33.672,float64
+Valor de arancel,1576,33.312,float64
+Valor de matrícula,1422,30.057,float64
+Vacantes,896,18.939,float64
+Códgo SIES,705,14.902,string
+Valor del Título,475,10.04,float64
+Título,2,0.042,string
+Area Conocimiento,0,0.0,string
+Año,0,0.0,int64
+Año Inicio Actividades,0,0.0,int64
+Carrera Genérica,0,0.0,string
+Clasificación1,0,0.0,string
+Clasificación2,0,0.0,string
+Clasificación3,0,0.0,string
+Clasificación4,0,0.0,string
+Clasificación5,0,0.0,string
+Clasificación6,0,0.0,string
+Comuna donde se imparte la carrera o programa,0,0.0,string
+Cód. Carrera,0,0.0,string
+Cód. Institución,0,0.0,string
+Cód. Sede,0,0.0,string
+Duración (en semestres),0,0.0,int64
+Horario,0,0.0,string
+IngresoDirecto,0,0.0,string
+Matrícula Primer Año,0,0.0,int64
+Matrícula Primer Año No Binario,0,0.0,int64
+Matrícula Total,0,0.0,int64
+Matrícula Total No Binario,0,0.0,int64
+Matrícula primer año extranjeros,0,0.0,string
+Matrícula primer año hombres,0,0.0,int64
+Matrícula primer año mujeres,0,0.0,int64
+Matrícula total extranjeros,0,0.0,string
+Matrícula total hombres,0,0.0,int64
+Matrícula total mujeres,0,0.0,int64
+Nombre Institución,0,0.0,string
+Nombre Programa,0,0.0,string
+Nombre Region,0,0.0,string
+Nombre de la Sede,0,0.0,string
+Orden Geográfico de la Región (Norte aSur),0,0.0,int64
+Pregrado/Posgrado,0,0.0,string
+Tipo Carrera,0,0.0,string
+Tipo Institución,0,0.0,string
+Tipo Moneda,0,0.0,string
+Tipo Programa,0,0.0,string
+idgenerocarrera,0,0.0,string

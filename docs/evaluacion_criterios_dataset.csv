@@ -1,0 +1,6 @@
+﻿criterio,valor,cumple
+Registros ≥ 2.000,4731,True
+Columnas ≥ 12,62,True
+Roles analíticos ≥ 3,5,True
+Numéricas presentes,18,True
+Categóricas presentes,44,True

@@ -1,0 +1,82 @@
+{
+  "resultado": "AUDITORIA_TECNICA_APROBADA",
+  "fecha": "2026-11-14",
+  "guia": "Guia_desarrollo_Sumativa1_Fases1y2 (1).docx",
+  "rubrica_criterios": 15,
+  "puntaje_maximo": 99,
+  "puntaje_otorgado_por_profesor": null,
+  "pruebas_automatizadas": {
+    "aprobadas": 23,
+    "fallidas": 0
+  },
+  "notebooks": {
+    "F1": {
+      "codigo": 8,
+      "celdas": 19,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "errores": 0
+    },
+    "F2": {
+      "codigo": 10,
+      "celdas": 22,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "errores": 0
+    }
+  },
+  "datos": {
+    "filas": 4731,
+    "instituciones": 27,
+    "columnas_finales": 68,
+    "matricula_primer_anio": 137481,
+    "matricula_total": 439607,
+    "sha256_origen": "0439bc1ed1a6ec018a3bbf4be34861bd33749c81c34c2eeeddbc7dcd2657c48a"
+  },
+  "documento": {
+    "paginas_pdf": 8,
+    "apartados_guia": 15,
+    "tipografia": "Calibri",
+    "papel": "carta"
+  },
+  "git": {
+    "rama_creada": true,
+    "nombre_rama": "fix/sumativa1-cned-guia-integrada-20261114",
+    "branch_from": "main",
+    "principal_modificada": false,
+    "pull_request": "pendiente de creación"
+  },
+  "pendientes_no_simulables": [
+    "Que otro integrante clone, instale dependencias en un segundo equipo y ejecute F1/F2",
+    "Acreditar commits propios de integrantes y PR con autorización de escritura",
+    "Obtener aprobación docente de Grupo 8 con dos integrantes (guía exige 3–4)",
+    "Confirmar URL/fecha de descarga de versión del Excel 2005–2026 (portal describe 2005–2025)",
+    "Cotejar plantilla institucional original de Canvas antes de nueva entrega"
+  ],
+  "grupo": {
+    "numero": 8,
+    "integrantes": [
+      "Cristian Pérez Cortés",
+      "Claudio Navarrete Sims"
+    ],
+    "aprobacion_docente_dos_personas": "PENDIENTE"
+  }
+}

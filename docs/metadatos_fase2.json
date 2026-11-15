@@ -1,0 +1,131 @@
+{
+  "fase": "F2",
+  "registros": 4731,
+  "columnas_finales": 68,
+  "matricula_primer_anio": 137481,
+  "matricula_total": 439607,
+  "columnas_vacias": [
+    "Máximo Puntaje (promedio matemáticas y lenguaje)",
+    "Promedio Puntaje (promedio matemáticas y lenguaje)",
+    "Mínimo Puntaje (promedio matemáticas y lenguaje)",
+    "Puntaje de corte (primer seleccionado)",
+    "Puntaje de corte (promedio de la carrera)",
+    "Puntaje de corte (último seleccionado)",
+    "Máximo Puntaje NEM",
+    "Promedio Puntaje NEM",
+    "Mínimo Puntaje NEM",
+    "Máximo Puntaje Ranking",
+    "Promedio Puntaje Ranking",
+    "Mínimo Puntaje Ranking",
+    "Nº Alumnos Ingreso Via PSU o PDT"
+  ],
+  "columnas_excluidas_por_umbral": [
+    "Mención o Especialidad",
+    "Grado Académico"
+  ],
+  "evaluacion_imputaciones": [
+    {
+      "variable": "Valor de arancel",
+      "observaciones_validacion": 315,
+      "mae_media": 421312.015,
+      "mae_global": 419175.098,
+      "mae_jerarquica": 204107.098,
+      "metodo_seleccionado": "jerarquica",
+      "filas_perdidas_si_elimina": 1571,
+      "semilla": 42,
+      "faltantes_originales": 1576,
+      "estimaciones_realizadas": 1571,
+      "faltantes_final_analisis": 5,
+      "desv_antes_observados": 519641.174,
+      "desv_despues_analisis": 481176.638,
+      "cambio_desv_pct": -7.402
+    },
+    {
+      "variable": "Valor de matrícula",
+      "observaciones_validacion": 330,
+      "mae_media": 72548.286,
+      "mae_global": 66149.697,
+      "mae_jerarquica": 31583.03,
+      "metodo_seleccionado": "jerarquica",
+      "filas_perdidas_si_elimina": 1417,
+      "semilla": 42,
+      "faltantes_originales": 1422,
+      "estimaciones_realizadas": 1417,
+      "faltantes_final_analisis": 5,
+      "desv_antes_observados": 97367.092,
+      "desv_despues_analisis": 89915.742,
+      "cambio_desv_pct": -7.653
+    },
+    {
+      "variable": "Valor del Título",
+      "observaciones_validacion": 424,
+      "mae_media": 272892.993,
+      "mae_global": 248201.866,
+      "mae_jerarquica": 64938.297,
+      "metodo_seleccionado": "jerarquica",
+      "filas_perdidas_si_elimina": 475,
+      "semilla": 42,
+      "faltantes_originales": 475,
+      "estimaciones_realizadas": 475,
+      "faltantes_final_analisis": 0,
+      "desv_antes_observados": 308861.11,
+      "desv_despues_analisis": 303194.999,
+      "cambio_desv_pct": -1.835
+    },
+    {
+      "variable": "Vacantes",
+      "observaciones_validacion": 383,
+      "mae_media": 41.087,
+      "mae_global": 33.478,
+      "mae_jerarquica": 25.764,
+      "metodo_seleccionado": "jerarquica",
+      "filas_perdidas_si_elimina": 896,
+      "semilla": 42,
+      "faltantes_originales": 896,
+      "estimaciones_realizadas": 896,
+      "faltantes_final_analisis": 0,
+      "desv_antes_observados": 98.02,
+      "desv_despues_analisis": 90.268,
+      "cambio_desv_pct": -7.909
+    }
+  ],
+  "escalamiento": {
+    "metodo": "MinMax[0,1] con mínimo observado = 0",
+    "maximo_observado": 1272.0,
+    "log": "np.log1p",
+    "uso": "diagnóstico y visualización, nunca sustitución de matrícula"
+  },
+  "validacion": {
+    "filas_sin_perdidas": 4731,
+    "columnas_salida": 68,
+    "filas_anomalia_temporal": 1,
+    "cero_primer_anio_preservados": 1576,
+    "nulos_originales_preservados_por_columna": true,
+    "desgloses_matricula_consistentes": true
+  },
+  "impacto_anomalia_primer_anio": 39,
+  "indicadores_concentracion": [
+    {
+      "dimension": "Nombre Institución",
+      "total_matricula_primer_anio": 137481,
+      "grupos": 27,
+      "cr3_pct": 53.916,
+      "hhi": 1348.247
+    },
+    {
+      "dimension": "Nombre Region",
+      "total_matricula_primer_anio": 137481,
+      "grupos": 16,
+      "cr3_pct": 79.243,
+      "hhi": 4402.463
+    },
+    {
+      "dimension": "Area Conocimiento",
+      "total_matricula_primer_anio": 137481,
+      "grupos": 10,
+      "cr3_pct": 79.806,
+      "hhi": 2862.56
+    }
+  ],
+  "nota": "Matrícula original no imputada; datos derivados identificados."
+}

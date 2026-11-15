@@ -1,0 +1,69 @@
+{
+  "estado": "APROBADO",
+  "F1": {
+    "registros": 4731,
+    "instituciones": 27,
+    "columnas": 62,
+    "matricula_primer_anio": 137481,
+    "matricula_total": 439607,
+    "registro_inicio_posterior": 1,
+    "duplicados_completos": 0,
+    "matricula_primer_anio_cero": 1576,
+    "pregrado": 4714,
+    "posgrado": 17
+  },
+  "F2": {
+    "filas_sin_perdidas": 4731,
+    "columnas_salida": 68,
+    "filas_anomalia_temporal": 1,
+    "cero_primer_anio_preservados": 1576,
+    "nulos_originales_preservados_por_columna": true,
+    "desgloses_matricula_consistentes": true
+  },
+  "notebooks": {
+    "F1": {
+      "celdas": 19,
+      "codigo": 8,
+      "ejecutadas": 8,
+      "errores": 0,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vacias": 0
+    },
+    "F2": {
+      "celdas": 22,
+      "codigo": 10,
+      "ejecutadas": 10,
+      "errores": 0,
+      "secuencia": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vacias": 0
+    }
+  },
+  "salida": "data/processed/matricula_ip_2025_procesada_v3.csv",
+  "pendientes_externos": [
+    "instalación en un segundo equipo",
+    "commits individuales y PR",
+    "nómina del grupo",
+    "plantilla institucional original",
+    "procedencia exacta XLSX 2005-2026"
+  ]
+}
