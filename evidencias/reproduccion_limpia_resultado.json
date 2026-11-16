@@ -1,0 +1,26 @@
+{
+  "fuente": "Excel CNED suministrado: SHA256 0439bc1ed1a6ec018a3bbf4be34861bd33749c81c34c2eeeddbc7dcd2657c48a",
+  "prueba": "reproducción local en copia temporal, Python 3.13.5",
+  "fases": [
+    {
+      "fase": "F1",
+      "celdas": 8,
+      "errores": 0
+    },
+    {
+      "fase": "F2",
+      "celdas": 10,
+      "errores": 0
+    },
+    {
+      "fase": "F3",
+      "celdas": 10,
+      "errores": 0
+    }
+  ],
+  "registros": 4731,
+  "columnas": 68,
+  "matricula_primer_anio": 137481,
+  "matricula_total": 439607,
+  "nota": "No es evidencia de instalación nueva en Windows. Matriz CI pendiente."
+}
