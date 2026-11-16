@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
+from io import StringIO
 from pathlib import Path
 import re
 import sys
@@ -83,6 +84,66 @@ def auditar(integracion: bool = False) -> dict:
             and datos_bench['memoria_pico_mib'].ge(0).all())
     _registrar(checks, 'benchmark:replicable', bien,
                f'{len(datos_bench)} filas, {len(grupos)} tamaños, 2 algoritmos, tiempos y memoria')
+
+    # Verificar las salidas guardadas de F3, no solo el CSV y el informe.
+    try:
+        nb_f3 = nbformat.read(ROOT / 'F3/S2_F3_NucleoAlgoritmico_Cned.ipynb',
+                              as_version=4)
+        tablas = []
+        for celda in nb_f3.cells:
+            if celda.cell_type != 'code':
+                continue
+            for salida in celda.get('outputs', []):
+                html = salida.get('data', {}).get('text/html', '')
+                if 'tiempo_minimo_ms' in html and 'bucle_por_grupo' in html:
+                    tablas.append(html)
+        if len(tablas) != 1:
+            raise ValueError('Se esperaba una sola tabla de benchmarks; '
+                             f'se encontraron {len(tablas)}')
+        tabla_nb = pd.read_html(StringIO(tablas[0]))[0]
+        tabla_nb = tabla_nb.loc[:, [c for c in tabla_nb.columns
+                                    if not str(c).startswith('Unnamed:')]]
+        claves = ['filas', 'algoritmo']
+        cols = ['rondas', 'repeticiones_por_ronda', 'tiempo_minimo_ms',
+                'tiempo_mediana_ms', 'memoria_pico_mib',
+                'grupos', 'equivalencia_validada']
+        csv_ordenado = datos_bench.sort_values(claves).reset_index(drop=True)
+        nb_ordenado = tabla_nb.sort_values(claves).reset_index(drop=True)
+        import numpy as np
+        coincide = (len(csv_ordenado) == len(nb_ordenado)
+                    and csv_ordenado[claves].equals(nb_ordenado[claves]))
+        if coincide:
+            for col in cols:
+                a, b = csv_ordenado[col], nb_ordenado[col]
+                if col == 'equivalencia_validada':
+                    if not a.astype(bool).equals(b.astype(bool)):
+                        coincide = False
+                        break
+                elif not np.allclose(pd.to_numeric(a), pd.to_numeric(b),
+                                     rtol=0, atol=0.00005):
+                    coincide = False
+                    break
+        detalle = ('Las seis filas del notebook coinciden con el CSV'
+                   if coincide else 'Las salidas del notebook difieren del CSV')
+    except Exception as exc:
+        coincide = False
+        detalle = 'No se pudo cotejar el notebook: ' + str(exc)
+    _registrar(checks, 'notebook:benchmark_concordante', coincide, detalle)
+
+    try:
+        resumen = datos_bench.query('filas == 4731').set_index('algoritmo')
+        razon = float(resumen.loc['bucle_por_grupo', 'tiempo_minimo_ms'] /
+                      resumen.loc['pandas_groupby', 'tiempo_minimo_ms'])
+        textos = [salida.get('text', '')
+                  for celda in nb_f3.cells if celda.cell_type == 'code'
+                  for salida in celda.get('outputs', [])
+                  if salida.get('output_type') == 'stream']
+        relato_conforme = (f'groupby fue {razon:.1f} veces más rápido'
+                           in '\n'.join(textos))
+    except Exception:
+        relato_conforme = False
+    _registrar(checks, 'notebook:rapidez_concordante', relato_conforme,
+               'La aceleración textual coincide con la cifra del CSV')
 
     texto, filas_tablas = _texto_docx(ROOT / 'docs/f3_s02_entregable_g8.docx')
     tabla_bench = [f for f in filas_tablas if len(f) == 4 and f[0].strip().isdigit() and f[1] in conjuntos]
