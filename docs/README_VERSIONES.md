@@ -14,4 +14,8 @@ Este documento diferencia la primera entrega evaluada (60/99 puntos), las correc
 
 El lector de datos y su pipeline no deben mezclar la base histórica procesada de 48 columnas con la nueva salida de 68. La ruta de entrada F3 es la salida **generada por F2**, no el archivo histórico versionado.
 
-**Contribuciones:** ambos integrantes efectuaron acciones auténticas en GitHub. PR #1–4 fueron integrados. La fecha/URL exacta de la versión INDICES 2005–2026, plantilla Canvas y aceptación docente del grupo de dos quedan sin acreditar.
+**Contribuciones:** ambos integrantes efectuaron acciones auténticas en GitHub. PR #1–6 fueron integrados. La fecha/URL exacta de la versión INDICES 2005–2026, plantilla Canvas y aceptación docente del grupo de dos quedan sin acreditar.
+
+## Actualización de reproducibilidad (16/11/2026)
+
+El proyecto fija Notebook 7.5.3, separa los objetivos analíticos de la metodología y mantiene los archivos de la primera entrega como evidencia histórica. El PR #7 propone estos ajustes y su revisión formal sigue pendiente hasta fusionarlo. Los resultados con Excel no se sustituyen por los controles CI sin datos.

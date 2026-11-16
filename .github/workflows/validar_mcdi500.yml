@@ -1,14 +1,17 @@
-name: MCDI500 - validación continua
-
+name: MCDI500 - reproducibilidad y calidad
 on:
   push:
-    branches: [main, 'fix/**', 'feat/**']
+    branches: [main, 'fix/**', 'feat/**', 'docs/**']
   pull_request:
-    branches: [main, 'fix/**']
-
+    branches: [main]
 jobs:
   calidad:
-    runs-on: ubuntu-latest
+    name: Python 3.13 / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     permissions:
       contents: read
     steps:
@@ -16,32 +19,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Instalar dependencias reproducibles
+      - name: Instalación limpia de dependencias fijadas
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-      - name: Validar sintaxis de módulos
-        run: python -m compileall -q src tests scripts
-      - name: Validar formato de notebooks
+          python -m pip install --only-binary=:all: -r requirements.txt
+      - name: Comprobar dependencias
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import nbformat
-          for ruta in sorted(Path('.').glob('F*/*.ipynb')):
-              nb=nbformat.read(ruta,as_version=4)
-              nbformat.validate(nb)
-              print('[OK]',ruta)
-          PY
-      - name: Pruebas unitarias (sin base original)
+          python -m pip check
+          python scripts/verificar_entorno.py
+      - name: Validar sintaxis Python
+        run: python -m compileall -q src tests scripts
+      - name: Pruebas portátiles sin Excel original
         run: python -m pytest -q tests --junitxml=evidencias/pytest_ci.xml
-      - name: Auditar concordancia de entregables F3
+      - name: Auditoría F3 notebook/CSV/PDF
         run: python scripts/auditar_entrega_f3.py
-      - name: Guardar reporte de pruebas
+      - name: Auditoría académica F1/F2
+        run: python scripts/auditar_consistencia_academica.py
+      - name: Guardar reporte
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pruebas-mcdi500
+          name: pruebas-mcdi500-${{ matrix.os }}
           path: evidencias/pytest_ci.xml
 
-# Advertencia: el Excel de ~60 MB NO se versiona. La equivalencia completa
-# F2/F3 se ejecuta por separado con la fuente disponible en data/raw/.
+# CI omite tres pruebas que requieren el Excel original.

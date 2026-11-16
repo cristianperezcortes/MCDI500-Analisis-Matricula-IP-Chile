@@ -43,36 +43,60 @@ data/processed/                     CSV final e indicadores
 - **Versión histórica de Sumativa 1 (60/99):** `F1/F1_Definición.ipynb`, `F2/F2_procesamiento.ipynb`, `docs/Informe_Tecnico_Semana1.pdf`, `docs/informe_tecnico.md`, `docs/Revision_calidad_datos.md` y `data/processed/matricula_ip_2025_procesada.csv` (**48 columnas**, resultado original). No usarlos como dataset vigente.
 - **Resultado corregido:** ejecutar F2 para generar `data/processed/matricula_ip_2025_procesada_v3.csv` (**68 columnas**). El XLSX original nunca debe alterarse ni publicarse.
 - **Bitácora de cambios:** `docs/README_VERSIONES.md`; mapa de fases actualizado `docs/mapa_conceptual.md`.
-- **Integración Git:** PR #1, #2, #3 y #4 aprobados e integrados a `main` con autoría auténtica. PR correctivos adicionales deben seguir ese procedimiento.
+- **Integración Git:** PR #1–6 integrados a `main` con autoría auténtica. PR correctivos adicionales deben seguir ese procedimiento.
 
-## Requisitos
-Python 3.13.5. El archivo `requirements.txt` fija las versiones utilizadas durante esta revisión, incluidas `openpyxl`, `lxml`, `pandas`, `numpy`, `nbclient`, Jupyter y pruebas.
+## Reproducibilidad y versiones exactas
 
-### Windows PowerShell
-```powershell
-py -3.13 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python -m ipykernel install --user --name mcdi500-cned --display-name "Python (mcdi500-cned)"
-python -m jupyterlab
+El proyecto utiliza **Python 3.13.x** y versiones directas fijadas en `requirements.txt`, incluido **Jupyter Notebook 7.5.3**, **JupyterLab 4.5.3** y `openpyxl`. No se instalan librerías desde notebooks.
+
+### Windows: CMD, desde un clon limpio
+
+```cmd
+cd /d C:\mcdi500
+git clone https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile.git
+cd MCDI500-Analisis-Matricula-IP-Chile
+py -3.13 -m venv "%USERPROFILE%\venvs\mcdi500"
+"%USERPROFILE%\venvs\mcdi500\Scripts\activate.bat"
+python -m pip install --upgrade pip
+python -m pip install --only-binary=:all: -r requirements.txt
+python -m pip check
+python scripts/verificar_entorno.py
+python -m ipykernel install --user --name mcdi500-cned --display-name "Python 3.13 - MCDI500"
+python -m notebook
 ```
 
+En CMD trabajar desde una carpeta local corta fuera de OneDrive. En Jupyter seleccionar el kernel **Python 3.13 - MCDI500**.
+
 ### macOS / Linux
+
 ```bash
 python3.13 -m venv .venv
 source .venv/bin/activate
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python -m ipykernel install --user --name mcdi500-cned --display-name "Python (mcdi500-cned)"
-python -m jupyterlab
+python -m pip check
+python scripts/verificar_entorno.py
+python -m ipykernel install --user --name mcdi500-cned --display-name "Python 3.13 - MCDI500"
+python -m notebook
 ```
 
-## Ejecución en orden
-1. Guardar el Excel original en `data/raw/` con el nombre exacto y **sin modificarlo**.
-2. Iniciar Jupyter desde la raíz del repositorio o abrir notebooks desde las carpetas `F1/` y `F2/`. Seleccionar kernel `Python (mcdi500-cned)`.
-3. Abrir F1 y ejecutar **Restart Kernel → Run All**: definición, perfil, SHA-256, diccionario y metadatos. **No limpia ni transforma**.
-4. Abrir F2 y ejecutar **Restart Kernel → Run All**: obtención, faltantes, atípicos, comparación de cuatro alternativas de ausencia, estimaciones trazables, codificación, escalamiento derivado y validaciones.
-5. Ejecutar F3 con Restart Kernel → Run All: POO, equivalencia F2–F3, benchmarks, memoria y recursividad.
-6. Ejecutar `python -m pytest -q tests/` y `python scripts/verificar_proyecto.py`. Revisar salidas en `evidencias/` y `docs/`.
+### Secuencia de las fases con el Excel original
+
+1. Colocar el archivo `Base-INDICES-Matricula-2005-2026.xlsx` en `data/raw/`, sin modificarlo.
+2. Ejecutar los notebooks F1 → F2 → F3 con **Restart Kernel and Run All Cells**, cada uno desde la raíz del repositorio o su carpeta.
+3. Ejecutar los controles:
+
+```cmd
+python scripts/verificar_entorno.py --exigir-excel
+python -m pytest -q tests
+python scripts/verificar_proyecto.py
+python scripts/auditar_entrega_f3.py --integracion
+python scripts/auditar_consistencia_academica.py
+```
+
+4. Para un ensayo que **no sobrescriba las métricas oficiales de Cristian**, ejecutar `python scripts/reproducir_desde_cero.py --ejecutar`. Crea y borra una copia temporal con la misma fuente original. Los tiempos de `timeit` varían por computador.
+
+**Dos niveles de evidencia:** GitHub Actions valida instalación y pruebas en Windows y Ubuntu desde checkout limpio, **sin** la fuente original; tres pruebas de datos reales se omiten explícitamente en GitHub. La reproducción con Excel y comprobación SHA-256 se hace localmente. No se atribuye una nota académica a ninguna prueba.
 
 ## Decisiones y evidencia
 - La matrícula y los códigos originales no se imputan. Se conservan 1.576 ceros reales de matrícula de primer año.
@@ -85,7 +109,7 @@ python -m jupyterlab
 ## Colaboración GitHub
 Repositorio original: https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile
 
-La rama `main` integra las correcciones y la implementación F3; la entrega original se conserva en los commits y archivos históricos. Los cambios correctivos F1/F2 están en `fix/sumativa1-cned-guia-integrada-20261114` y PR #1; F3 y auditoría ya se integraron mediante PR #2–4. Solo se registran commits con autor y fecha reales. Convención sugerida: `docs:`, `feat:`, `fix:`, `test:`. No se puede reconstruir retrospectivamente el historial original ni acreditar aportes de integrantes no confirmados.
+La rama `main` integra las correcciones y la implementación F3; la entrega original se conserva en los commits y archivos históricos. Los cambios correctivos F1/F2 están en `fix/sumativa1-cned-guia-integrada-20261114` y PR #1; F3 y auditoría se integraron mediante PR #2–4; F1/F2 se reforzaron en PR #5; el control de versiones se actualizó en PR #6. Solo se registran commits con autor y fecha reales. Convención sugerida: `docs:`, `feat:`, `fix:`, `test:`. No se puede reconstruir retrospectivamente el historial original ni acreditar aportes de integrantes no confirmados.
 
 **Pendiente externo:** confirmación del docente sobre el equipo de dos integrantes, procedencia exacta de la versión XLSX 2005–2026, plantilla Canvas y comprobante de entrega oficial. La instalación independiente de Cristian en Windows ya se verificó. La escritura en las ramas de revisión ya fue verificada y los PR están publicados.
 
