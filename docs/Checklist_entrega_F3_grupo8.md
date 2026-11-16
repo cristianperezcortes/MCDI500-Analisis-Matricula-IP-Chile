@@ -42,6 +42,10 @@
 
 ## Resultado de la auditoría complementaria
 
-- **44/44 pruebas locales aprobadas**, con datos reales y pruebas sintéticas.
+- **44/44 pruebas registradas por Cristian en Windows; 53/53 en auditoría local ampliada**, con datos reales y pruebas sintéticas.
 - **27/27 controles documentales/de datos aprobados**, incluyendo formato y cifras del PDF.
 - **No se declara todavía una nota**: la plantilla externa, la autorización del grupo y la revisión independiente siguen pendientes.
+
+## Reproducción independiente del cierre
+
+GitHub Actions prueba instalación en Windows y Ubuntu y separa los 3 tests omitidos sin Excel. La ejecución integral desde una copia temporal con Excel verifica 4.731 × 68 y totales 137.481 / 439.607. PR #7 pendiente de revisión de Cristian; aprobación del profesor y comprobante de Canvas no disponibles.

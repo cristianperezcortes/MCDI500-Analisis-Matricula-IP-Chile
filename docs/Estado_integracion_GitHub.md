@@ -6,7 +6,7 @@
 
 ## Integraciones confirmadas en GitHub
 
-Los **cinco Pull Requests siguientes fueron integrados a `main`**, sin reconstruir ni alterar retrospectivamente sus commits.
+Los **seis Pull Requests siguientes fueron integrados a `main`**, sin reconstruir ni alterar retrospectivamente sus commits.
 
 | Pull Request | Aporte | Resultado |
 |---|---|---|
@@ -15,8 +15,9 @@ Los **cinco Pull Requests siguientes fueron integrados a `main`**, sin reconstru
 | [#3](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/3) | Auditoría adicional F3, informes, mediciones de Windows | **Merged**; commit `812b7153` |
 | [#4](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/4) | Notebook ejecutado en Windows por Cristian y validación de concordancia notebook/CSV | **Merged**; commit `1f82eda3` |
 | [#5](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/5) | Corrección académica F1/F2: índice, mapa conceptual, control de conservación y documentación histórica | **Merged**; commit `9a6a8b98` |
+| [#6](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/6) | Registro exacto de PR #1–5, límites de revisión y trazabilidad | **Merged**; commit `ea22811e` |
 
-**Estado de `main` al verificar:** `9a6a8b98b06014d8acb0c1c890be8c123a6a891d`.  
+**Estado de `main` al verificar:** `ea22811e7b138d611f7d06e8f8e02f1456b19cd0`.  
 **Validación automática posterior a PR #5:** [GitHub Actions — ejecución satisfactoria](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/actions/runs/43791591040). Se registraron **47 pruebas aprobadas, 3 omitidas por requerir el Excel original y 28/28 controles documentales aprobados** en el entorno de GitHub. Estas verificaciones no sustituyen la ejecución local con datos reales.
 
 ## Revisión y autoría: hechos comprobados y límites
@@ -35,3 +36,7 @@ Los **cinco Pull Requests siguientes fueron integrados a `main`**, sin reconstru
 4. Comprobar y conservar el **acuse de entrega en Canvas**. La fusión de PR no equivale a presentar la evaluación.
 
 > Este documento es un registro factual de versiones y verificaciones, no una calificación académica ni un certificado de aprobación docente.
+
+## Cambios posteriores sometidos a revisión
+
+El [PR #7](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/7) propone reproducibilidad en Windows/Ubuntu y objetivos académicos concordantes. **No se declara integrado mientras permanezca abierto**; el registro anterior corresponde al corte de PR #6.
