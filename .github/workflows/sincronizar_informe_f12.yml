@@ -1,0 +1,35 @@
+name: Sincronizar provisionalmente informe F1-F2
+on:
+  push:
+    branches: [fix/reproducibilidad-consistencia-academica-20261116]
+jobs:
+  regenerar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Dependencias para generación
+        run: |
+          python -m pip install "python-docx==1.2.0"
+          if ! command -v libreoffice >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y libreoffice-writer
+          fi
+      - name: Aplicar correcciones al Word
+        run: python scripts/sincronizar_informe_f12.py
+      - name: Regenerar PDF con LibreOffice
+        run: |
+          libreoffice -env:UserInstallation=file:///tmp/lo_mcdi500 --headless --convert-to pdf --outdir docs docs/Informe_Sumativa1_F1_F2_Guia_Integrada.docx
+      - name: Guardar documentos en la rama del Pull Request
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/Informe_Sumativa1_F1_F2_Guia_Integrada.docx docs/Informe_Sumativa1_F1_F2_Guia_Integrada.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: sincroniza informe F1-F2 Word y PDF con objetivos analíticos"
+            git push origin HEAD:fix/reproducibilidad-consistencia-academica-20261116
+          fi
