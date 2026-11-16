@@ -1,0 +1,9 @@
+{
+  "filas": 4731,
+  "columnas": 68,
+  "matricula_primer_anio": 137481,
+  "matricula_total": 439607,
+  "equivalencia_dataframe_exacto": true,
+  "equivalencia_csv": true,
+  "fuente_original_modificada": false
+}
