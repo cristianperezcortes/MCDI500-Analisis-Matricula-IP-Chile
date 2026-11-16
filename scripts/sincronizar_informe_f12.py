@@ -15,7 +15,7 @@ p=list(d.paragraphs)
 head=next(x for x in p if x.text.startswith("4.3.2 ") and "objetivos específicos" in x.text)
 head.text="4.3.2 Objetivos específicos analíticos"
 p=list(d.paragraphs)
-idx=p.index(head)
+idx=next(i for i,v in enumerate(p) if v._element is head._element)
 bullets=[]
 for a in p[idx+1:]:
     if a.style.name.startswith("Heading"):break
@@ -29,7 +29,7 @@ elif len(bullets)==3:
     for i,t in enumerate(OBJECTIVES):bullets[i].text=t
 else:raise RuntimeError(f"Objetivos inesperados: {len(bullets)}")
 p=list(d.paragraphs)
-idx=p.index(head)
+idx=next(i for i,v in enumerate(p) if v._element is head._element)
 last_bullet=next(a for a in reversed(p[:next(i for i,v in enumerate(p) if i>idx and v.style.name.startswith("Heading"))]) if a.style.name=="List Bullet")
 if not any("Actividades metodológicas, no objetivos:" in x.text for x in d.paragraphs):
     elem=OxmlElement("w:p");last_bullet._p.addnext(elem)
