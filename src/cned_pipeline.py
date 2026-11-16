@@ -511,10 +511,9 @@ def validar_fase2(original: pd.DataFrame, final: pd.DataFrame, audit: dict) -> d
         if variable != 'Vacantes':
             uf = final['moneda_normalizada'].eq('UF') & obs.isna()
             assert pred[uf].isna().all(), 'Se han imputado valores UF con pesos'
-    conservacion = auditar_columnas_originales_completas(original, final)
+    auditar_columnas_originales_completas(original, final)
     assert audit['columnas_salida']==final.shape[1]
-    return {'columnas_completas_preservadas': conservacion,
-            'filas_sin_perdidas':len(final),'columnas_salida':final.shape[1],
+    return {'filas_sin_perdidas':len(final),'columnas_salida':final.shape[1],
             'filas_anomalia_temporal':int(final['inicio_posterior_a_2025'].sum()),
             'cero_primer_anio_preservados':int(final['matricula_primer_anio_cero'].sum()),
             'nulos_originales_preservados_por_columna':True,
