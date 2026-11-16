@@ -16,7 +16,7 @@
 12. **Pruebas:** casos normales, límite y excepciones documentados; ejecución limpia de notebooks y guardado de salidas.
 13. **Funciones:** módulo `src/cned_pipeline.py` reutilizado por F1 y F2.
 14. **Mapa conceptual:** tabla de seis tipos, con estado implementado/proyectado y evidencia.
-15. **GitHub:** procedimiento de ramas, commits, PR y autoría. Pendiente de ejecución por los integrantes, no simulado.
+15. **GitHub:** procedimiento de ramas, commits, PR y autoría. Comprobado: contribuciones reales, revisiones y PR #1–4 integrados en main; historial inicial sin reescribir.
 16. **Bibliografía:** 2 fuentes del profesor, ≥2 documentación oficial y ≥1 artículo publicado en los últimos cinco años, con citas internas.
 
-Ver correspondencia completa de la guía en `docs/matriz_15_criterios.csv`. No se adjudican 99 puntos sin verificación externa de Git, integrantes y plantilla.
+Ver correspondencia completa de la guía en `docs/matriz_15_criterios.csv`. Las revisiones Git y la instalación independiente en Windows ya se comprobaron. La plantilla institucional, la autorización del grupo de dos y la procedencia exacta del Excel siguen pendientes; no se atribuye una nota nueva.

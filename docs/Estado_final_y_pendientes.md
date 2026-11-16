@@ -1,20 +1,22 @@
-# Cierre de auditoría conforme a la guía de Sumativa 1
+# Estado verificable del proyecto MCDI500 — revisión posterior a Sumativa 1
 
-**Estado técnico:** APROBADO localmente. Se revisaron los 15 criterios de la rúbrica (máximo 99 puntos) sin atribuir nota simulada.
+**Corte documental:** 16 de noviembre de 2026. **Alcance:** F1/F2 corregidos y F3 desarrollado. **Calificación conocida:** 60/99 en la entrega original; ningún resultado posterior se atribuye al profesor.
 
-- Notebooks: F1, 8 celdas de código ejecutadas; F2, 10 celdas ejecutadas; numeración continua y cero errores.
-- Pruebas automatizadas: **23/23 aprobadas**; auditoría integral `evidencias/auditoria_guia_sumativa1.json`.
-- Dataset: 4.731 registros × 68 columnas, 27 IP; 137.481 matrículas primer año y 439.607 matrículas totales, preservadas.
-- Informe DOCX/PDF: **15 apartados 4.1 a 4.15** en el mismo orden de la guía; APA 7 y evidencias cuantificadas.
-- Excel original: hash SHA-256 coincide con el adjunto, no modificado.
-- GitHub: la rama `fix/sumativa1-cned-guia-integrada-20261114` y el PR #1 fueron creados con permisos efectivos; `main` sigue sin modificaciones hasta la aprobación del PR.
+## Hechos comprobados
 
-## Obligaciones pendientes que no pueden inventarse
+- F1: 8 celdas de código ejecutadas en orden, sin errores guardados; definición, fuente, esquema y metadatos.
+- F2: 10 celdas ejecutadas en orden, sin errores guardados; 4.731 × 68, 27 IP, matrícula primer año 137.481 y matrícula total 439.607.
+- F3: 10 celdas ejecutadas en Python 3.13.17 Windows, equivalencia exacta F2–F3 y benchmarks medidos por Cristian.
+- Validación independiente de Cristian en Windows: 44/44 pruebas aprobadas y 27/27 controles con Excel antes de la última ampliación de pruebas.
+- GitHub: PR #1, #2, #3 y #4 aprobados e integrados a `main`, con commits auténticos de ambos integrantes.
+- GitHub Actions: validación tras PR #4 aprobada; 41 pruebas ejecutadas, 3 omitidas por no versionar el Excel; auditoría F3 28/28.
+- Versión documental vigente: `Informe_Sumativa1_F1_F2_Guia_Integrada.docx/.pdf`, `f3_s02_entregable_g8.docx/.pdf`.
 
-1. **Nómina declarada por el equipo (confirmada):** Grupo 8 = Cristian Pérez Cortés y Claudio Navarrete Sims. Óscar Quezada y Carlos Vergara no integran el equipo. **Pendiente administrativo:** obtener validación del docente para un grupo de 2 estudiantes, dado que la guía indica 3–4.
-2. Prueba real de instalación y ejecución por otro integrante en otro computador.
-3. Commits personales de ambos integrantes y revisión/aprobación de PR; la rama y el PR #1 ya están publicados.
-4. URL exacta y fecha de descarga acreditadas de la versión Excel 2005–2026.
-5. Cotejo final con la plantilla institucional original de Canvas.
+## Pendientes académicos o externos
 
-**Importante:** aprobar pruebas internas no garantiza 99 puntos. El documento final aún exige revisión y cumplimiento académico-administrativo por el grupo.
+1. Verificar con la plantilla institucional original de Canvas; no consta acceso a ese archivo.
+2. Obtener confirmación docente de la conformación de dos estudiantes en el Grupo 8.
+3. Acreditar enlace/fecha exactos de procedencia del libro Excel INDICES 2005–2026.
+4. Verificar en Canvas el archivo entregado y el comprobante de recepción; los commits de Git no sustituyen ese envío.
+
+**Control:** `python scripts/verificar_proyecto.py`, `python -m pytest -q tests`, `python scripts/auditar_entrega_f3.py --integracion` en el equipo que dispone del Excel original. El repositorio no debe contener el XLSX crudo.
