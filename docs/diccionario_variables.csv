@@ -1,0 +1,63 @@
+﻿variable,tipo_python,rol_analitico,faltantes,valores_distintos
+Año,int64,temporal,0,1
+Cód. Institución,object,identificador,0,27
+Nombre Institución,object,nominal/categórica,0,27
+Tipo Institución,object,nominal/categórica,0,1
+Clasificación1,object,nominal/categórica,0,1
+Clasificación2,object,nominal/categórica,0,1
+Clasificación3,object,nominal/categórica,0,2
+Clasificación4,object,nominal/categórica,0,2
+Clasificación5,object,nominal/categórica,0,2
+Clasificación6,object,nominal/categórica,0,2
+Nombre de la Sede,object,nominal/categórica,0,46
+Comuna donde se imparte la carrera o programa,object,nominal/categórica,0,54
+Nombre Region,object,nominal/categórica,0,16
+Orden Geográfico de la Región (Norte aSur),int64,nominal/categórica,0,16
+Cód. Carrera,object,identificador,0,4731
+Carrera Genérica,object,nominal/categórica,0,144
+Nombre Programa,object,nominal/categórica,0,649
+Mención o Especialidad,object,nominal/categórica,3733,92
+Horario,object,nominal/categórica,0,3
+Tipo Programa,object,nominal/categórica,0,2
+Area Conocimiento,object,nominal/categórica,0,10
+idgenerocarrera,object,identificador,0,150
+Tipo Carrera,object,nominal/categórica,0,5
+IngresoDirecto,object,nominal/categórica,0,2
+Año Inicio Actividades,int64,temporal,0,44
+Nombre del Campus,object,nominal/categórica,2747,45
+Duración (en semestres),int64,conteo discreto,0,11
+Cód. Campus,object,identificador,2674,59
+Cód. Sede,object,identificador,0,114
+Título,object,nominal/categórica,2,744
+Grado Académico,object,nominal/categórica,4166,4
+Máximo Puntaje (promedio matemáticas y lenguaje),object,nominal/categórica,4731,0
+Promedio Puntaje (promedio matemáticas y lenguaje),object,nominal/categórica,4731,0
+Mínimo Puntaje (promedio matemáticas y lenguaje),object,nominal/categórica,4731,0
+Puntaje de corte (primer seleccionado),object,nominal/categórica,4731,0
+Puntaje de corte (promedio de la carrera),object,nominal/categórica,4731,0
+Puntaje de corte (último seleccionado),object,nominal/categórica,4731,0
+Máximo Puntaje NEM,object,nominal/categórica,4731,0
+Promedio Puntaje NEM,object,nominal/categórica,4731,0
+Mínimo Puntaje NEM,object,nominal/categórica,4731,0
+Máximo Puntaje Ranking,object,nominal/categórica,4731,0
+Promedio Puntaje Ranking,object,nominal/categórica,4731,0
+Mínimo Puntaje Ranking,object,nominal/categórica,4731,0
+Nº Alumnos Ingreso Via PSU o PDT,float64,conteo discreto,4731,0
+Nº Alumnos Ingreso Otra Via,float64,conteo discreto,1593,249
+Valor de matrícula,float64,monetaria,1422,37
+Valor de arancel,float64,monetaria,1576,509
+Valor del Título,float64,monetaria,475,184
+Tipo Moneda,object,nominal/categórica,0,3
+Vacantes,float64,conteo discreto,896,178
+Matrícula primer año hombres,int64,conteo discreto,0,176
+Matrícula primer año mujeres,int64,conteo discreto,0,170
+Matrícula primer año extranjeros,object,conteo discreto,0,46
+Matrícula Primer Año,int64,conteo discreto,0,252
+Matrícula total hombres,int64,conteo discreto,0,361
+Matrícula total mujeres,int64,conteo discreto,0,334
+Matrícula total extranjeros,object,conteo discreto,0,75
+Matrícula Total,int64,conteo discreto,0,495
+Códgo SIES,object,identificador,705,3980
+Pregrado/Posgrado,object,nominal/categórica,0,2
+Matrícula Primer Año No Binario,int64,conteo discreto,0,3
+Matrícula Total No Binario,int64,conteo discreto,0,5

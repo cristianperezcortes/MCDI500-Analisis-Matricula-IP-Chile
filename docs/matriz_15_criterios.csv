@@ -1,0 +1,16 @@
+﻿criterio,puntos_maximos,evidencia,estado
+Portada e índice,3,"Informe DOCX/PDF, portada, índice de 15 apartados",Documento revisado; plantilla institucional exacta pendiente
+Introducción y contextualización,6,Informe §4.2 y CNED fuente,Implementado
+Problemática y objetivos,6,Informe §4.3; F1 §1; F2 encabezado; README,Implementado
+Herramientas científicas,9,"F1/F2, Python/NumPy/Pandas, modulo src",Implementado
+Reproducibilidad técnica,6,"requirements.txt, F1/F2 versiones y kernel, tests",Pendiente verificación en otro equipo
+Control de versiones,6,"Bitácora Git, normas README",Pendiente commits individuales/PR
+Documentación del proceso,6,"Registro_decisiones.md, notebooks y CSV",Implementado
+Repositorio GitHub,6,"F1/F2/src/docs, README, .gitignore",Pendiente publicación rama y PR
+Codificación funcional,9,src/cned_pipeline.py y tests/,Implementado
+Preprocesamiento/transformación,6,F2 §3–5; comparación cuatro alternativas; flags/onehot/escalas,Implementado
+Validación técnica,6,"pytest, auditoría y outputs guardados",Implementado local
+Notebook F1 ejecutado,9,"F1 notebook, solo reconoce fuente, salidas",Implementado local
+Notebook F2 ejecutado,9,"F2 notebook, salida CSV, métricas",Implementado local
+Vinculación mapa conceptual,6,mapa_conceptual.md y tabla seis tipos,Implementado
+Aspectos formales APA 7,6,"Informe, 2 fuentes docentes+2 técnicas+1 académica reciente",Plantilla específica por confirmar

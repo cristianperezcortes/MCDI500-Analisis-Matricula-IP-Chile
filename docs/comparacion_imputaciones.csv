@@ -1,0 +1,5 @@
+﻿variable,observaciones_validacion,mae_media,mae_global,mae_jerarquica,metodo_seleccionado,filas_perdidas_si_elimina,semilla,faltantes_originales,estimaciones_realizadas,faltantes_final_analisis,desv_antes_observados,desv_despues_analisis,cambio_desv_pct
+Valor de arancel,315,421312.015,419175.098,204107.098,jerarquica,1571,42,1576,1571,5,519641.174,481176.638,-7.402
+Valor de matrícula,330,72548.286,66149.697,31583.03,jerarquica,1417,42,1422,1417,5,97367.092,89915.742,-7.653
+Valor del Título,424,272892.993,248201.866,64938.297,jerarquica,475,42,475,475,0,308861.11,303194.999,-1.835
+Vacantes,383,41.087,33.478,25.764,jerarquica,896,42,896,896,0,98.02,90.268,-7.909
