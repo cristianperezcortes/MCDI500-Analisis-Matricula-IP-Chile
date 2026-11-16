@@ -43,3 +43,7 @@ Los avances se versionan mediante ramas y pull requests con fecha y autor real. 
 - `tests/test_f3_regresion_portatil.py`: prueba un conjunto **sintético**, no corresponde a registros reales del CNED.
 - Las pruebas sin Excel se distinguen explícitamente de las de integración real; no se declara su aprobación por omisión.
 - El informe DOCX/PDF usa las cifras de la misma ejecución registrada en `evidencias/f3_benchmarks.csv`. Si se repite el benchmark, debe actualizarse la tabla y figura del informe antes de enviar.
+
+## Fuente institucional y alcance temporal
+
+La fuente de los registros es el sistema CNED–INDICES, disponible en el [portal oficial del Consejo Nacional de Educación](https://cned.cl/institucional/bases-de-datos/). El equipo utilizó el ejemplar denominado `Base-INDICES-Matricula-2005-2026.xlsx`, cuya integridad se comprueba mediante SHA-256. La página pública consultada identifica una edición de matrícula 2005–2025; no afirmamos tener la URL directa ni la fecha de descarga del ejemplar 2005–2026. **2025 es el año de los datos analizados y 2026 el año de preparación del informe.**

@@ -19,7 +19,7 @@ La reproducción crea una copia temporal del proyecto, ejecuta F1→F2→F3 en p
 ## Coherencia científica
 Los objetivos **analíticos** son distribución, concentración (CR3 y HHI) y sensibilidad del registro atípico IP Santo Tomás. La selección, imputación y limpieza son **actividades metodológicas**, no objetivos de investigación. El archivo docs/objetivos_analiticos_f1f3.txt establece su redacción canónica.
 
-Los notebooks F1, F2 y F3 y el informe F1/F2 deben mantener esa misma formulación. El control scripts/auditar_consistencia_academica.py comprueba su correspondencia. El Word/PDF actualizado se incorporó a la rama mediante la automatización de documentos; verificar su correspondencia con los notebooks y la guía mediante CI antes de fusionar.
+Los notebooks F1, F2 y F3 y el informe F1/F2 deben mantener esa misma formulación. El control scripts/auditar_consistencia_academica.py comprueba su correspondencia. El Word/PDF actualizado fue integrado mediante el PR #7 y su correspondencia académica fue comprobada por CI en Windows y Ubuntu.
 
 ## Límites institucionales (pendientes, no aprobados)
 1. Plantilla institucional solicitada al profesor, aún no disponible para cotejo.
@@ -28,3 +28,9 @@ Los notebooks F1, F2 y F3 y el informe F1/F2 deben mantener esa misma formulaci�
 4. Comprobante del envío a Canvas.
 
 El informe F3 conserva las mediciones reales de Windows de Cristian: 21,020 ms y 1,889 ms para el caso de 4.731 filas. No alterar esas cifras sin rehacer y registrar el experimento y regenerar todas las evidencias documentales.
+
+## Procedencia y comparación de concentración
+
+La fuente primaria de los datos es CNED–INDICES: https://cned.cl/institucional/bases-de-datos/. La copia analizada está identificada por SHA-256; el nombre de archivo 2005–2026 no constituye por sí mismo prueba de descarga de esa edición, mientras el portal público muestra 2005–2025. Ver `docs/Proveniencia_CNED_INDICES.md`.
+
+CR3 y HHI se informan por institución, región y área, pero sus valores no deben compararse ingenuamente entre dimensiones con distinto número de grupos. Ver `docs/Nota_metodologica_concentracion.md`.

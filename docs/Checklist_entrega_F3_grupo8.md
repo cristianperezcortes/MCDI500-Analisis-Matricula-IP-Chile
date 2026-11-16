@@ -21,7 +21,7 @@
 - [x] Cristian ejecutó el proyecto con el Excel original en Windows, desde una copia descargada; la instalación desde clon Git con carpeta `.git` permanece como verificación adicional opcional.
 - [x] Cristian ejecutó F1, F2 y F3 desde Jupyter en Windows; F3 actualizado con sus salidas reales en PR #4.
 - [x] Ejecutó 44/44 pruebas y 27/27 controles con el Excel antes de ampliar las pruebas; posteriormente se agregaron seis casos sintéticos (50/50 en revisión local).
-- [x] PR #1–4 revisados, aprobados e integrados en `main` con la cuenta real de Cristian.
+- [x] PR #1–7 integrados en `main` y respaldados por GitHub; las aprobaciones formales corresponden únicamente a las registradas en cada PR.
 - [x] Cristian realizó commits y revisiones con su cuenta real sin modificar la autoría histórica.
 
 ## Documentos y aprobación académica
@@ -48,4 +48,6 @@
 
 ## Reproducción independiente del cierre
 
-GitHub Actions prueba instalación en Windows y Ubuntu y separa los 3 tests omitidos sin Excel. La ejecución integral desde una copia temporal con Excel verifica 4.731 × 68 y totales 137.481 / 439.607. PR #7 pendiente de revisión de Cristian; aprobación del profesor y comprobante de Canvas no disponibles.
+GitHub Actions prueba instalación en Windows y Ubuntu y separa los 3 tests omitidos sin Excel. La ejecución integral desde una copia temporal con Excel verifica 4.731 × 68 y totales 137.481 / 439.607. PR #7 integrado en `main`, con GitHub Actions Windows/Ubuntu aprobado. La revisión docente y el comprobante de Canvas no están acreditados.
+
+**Nota final de integridad:** fuente institucional CNED–INDICES, año de matrícula 2025 e informes preparados en 2026. No confundir el nombre de la copia 2005–2026 con una edición de descarga verificada del portal. Consultar `docs/Proveniencia_CNED_INDICES.md`.
