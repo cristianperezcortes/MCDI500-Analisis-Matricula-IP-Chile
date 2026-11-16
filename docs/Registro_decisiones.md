@@ -20,8 +20,8 @@
 | D16 | Duplicaciones | No eliminar por coincidencias de programa/sede sin verificar campus/jornada | 0 duplicados idénticos |
 | D17 | Concentración | Participaciones, CR3 e HHI sobre primer año **observado** | Instituciones CR3 53,916%; regiones 79,243%; áreas 79,806% |
 | D18 | Reproducibilidad | Versiones exactas, kernel, rutas relativas, pruebas con salida guardada | `requirements.txt`, F1/F2, `evidencias/` |
-| D19 | Colaboración | Nuevos commits reales por autor, rama y PR, nunca retrofechar | Pendiente de autorización Git y contribuciones del equipo |
+| D19 | Colaboración | Nuevos commits reales por autor, rama y PR, nunca retrofechar | Contribuciones auténticas de ambos integrantes; PR #1–4 integrados en main |
 
 ## Riesgos residuales
 
-No se conoce el mecanismo de ausencia de datos monetarios; MAE sobre valores observados ocultados no permite probar validez causal ni ausencia aleatoria. La versión 2005–2026 necesita URL y fecha de descarga acreditadas. La instalación en otro equipo y la autoría colaborativa requieren acciones humanas verificables.
+No se conoce el mecanismo de ausencia de datos monetarios; MAE sobre valores observados ocultados no permite probar validez causal ni ausencia aleatoria. La versión 2005–2026 necesita URL y fecha de descarga acreditadas. La instalación y ejecución independientes en Windows y la autoría colaborativa ya se acreditaron. Siguen pendientes la plantilla, la procedencia exacta y la validación administrativa del grupo.

@@ -2,7 +2,7 @@
 
 **Evaluación:** MCDI500, Fase 3 / Semana 2 · 69 puntos · 20% del módulo.  
 **Entrega declarada en Canvas:** domingo 15 de noviembre de 2026, 23:59 (Chile). Confirmar el plazo en la cuenta del estudiante antes de subir.  
-**Integrantes declarados por el equipo:** Cristian Pérez Cortés y Claudio Navarrete Sims. La autorización del grupo de dos está pendiente de respuesta docente.
+**Integrantes declarados por el equipo:** Cristian Pérez Cortés y Claudio Navarrete Sims. La autorización docente del grupo de dos no consta en las evidencias disponibles.
 
 ## Validaciones automatizables completadas
 
@@ -18,11 +18,11 @@
 
 ## Revisión de Cristian (acciones reales)
 
-- [ ] Descargar o abrir el proyecto desde GitHub y comprobarlo con el Excel original.
-- [ ] Ejecutar F2 y F3 desde Jupyter en su propio ambiente y conservar resultado o captura.
-- [ ] Ejecutar `python -m pytest -q tests` y `python scripts/auditar_entrega_f3.py --integracion`.
-- [ ] Abrir el PR de F1/F2 (#1) y el PR de F3 (#2), comentar los aspectos que haya revisado.
-- [ ] Aportar sus cambios o comentarios con su cuenta real; no alterar autorías anteriores.
+- [x] Cristian ejecutó el proyecto con el Excel original en Windows, desde una copia descargada; la instalación desde clon Git con carpeta `.git` permanece como verificación adicional opcional.
+- [x] Cristian ejecutó F1, F2 y F3 desde Jupyter en Windows; F3 actualizado con sus salidas reales en PR #4.
+- [x] Ejecutó 44/44 pruebas y 27/27 controles con el Excel antes de ampliar las pruebas; posteriormente se agregaron seis casos sintéticos (50/50 en revisión local).
+- [x] PR #1–4 revisados, aprobados e integrados en `main` con la cuenta real de Cristian.
+- [x] Cristian realizó commits y revisiones con su cuenta real sin modificar la autoría histórica.
 
 ## Documentos y aprobación académica
 

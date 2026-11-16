@@ -35,6 +35,16 @@ data/interim/                       extracto filtrado generado exclusivamente en
 data/processed/                     CSV final e indicadores
 ```
 
+## Archivos vigentes e históricos (evitar confusiones académicas)
+
+- **Informe Sumativa 1 corregido:** `docs/Informe_Sumativa1_F1_F2_Guia_Integrada.pdf` (y su DOCX editable).
+- **Informe Sumativa 2 F3 definitivo:** `docs/f3_s02_entregable_g8.pdf` (y su DOCX editable).
+- **Notebooks vigentes:** `F1/F1_Definicion_Cned.ipynb`, `F2/F2_Preprocesamiento_Cned.ipynb`, `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb`.
+- **Versión histórica de Sumativa 1 (60/99):** `F1/F1_Definición.ipynb`, `F2/F2_procesamiento.ipynb`, `docs/Informe_Tecnico_Semana1.pdf`, `docs/informe_tecnico.md`, `docs/Revision_calidad_datos.md` y `data/processed/matricula_ip_2025_procesada.csv` (**48 columnas**, resultado original). No usarlos como dataset vigente.
+- **Resultado corregido:** ejecutar F2 para generar `data/processed/matricula_ip_2025_procesada_v3.csv` (**68 columnas**). El XLSX original nunca debe alterarse ni publicarse.
+- **Bitácora de cambios:** `docs/README_VERSIONES.md`; mapa de fases actualizado `docs/mapa_conceptual.md`.
+- **Integración Git:** PR #1, #2, #3 y #4 aprobados e integrados a `main` con autoría auténtica. PR correctivos adicionales deben seguir ese procedimiento.
+
 ## Requisitos
 Python 3.13.5. El archivo `requirements.txt` fija las versiones utilizadas durante esta revisión, incluidas `openpyxl`, `lxml`, `pandas`, `numpy`, `nbclient`, Jupyter y pruebas.
 
@@ -75,9 +85,9 @@ python -m jupyterlab
 ## Colaboración GitHub
 Repositorio original: https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile
 
-La rama `main` representa la entrega original. Los cambios correctivos F1/F2 están en `fix/sumativa1-cned-guia-integrada-20261114` y PR #1; F3 se integra mediante una rama y PR independientes. Solo se registran commits con autor y fecha reales. Convención sugerida: `docs:`, `feat:`, `fix:`, `test:`. No se puede reconstruir retrospectivamente el historial original ni acreditar aportes de integrantes no confirmados.
+La rama `main` integra las correcciones y la implementación F3; la entrega original se conserva en los commits y archivos históricos. Los cambios correctivos F1/F2 están en `fix/sumativa1-cned-guia-integrada-20261114` y PR #1; F3 y auditoría ya se integraron mediante PR #2–4. Solo se registran commits con autor y fecha reales. Convención sugerida: `docs:`, `feat:`, `fix:`, `test:`. No se puede reconstruir retrospectivamente el historial original ni acreditar aportes de integrantes no confirmados.
 
-**Pendiente externo:** clon e instalación por Cristian en otro computador, confirmación del docente sobre el equipo de dos integrantes, procedencia exacta de la versión XLSX 2005–2026, plantilla Canvas y entrega oficial. La escritura en las ramas de revisión ya fue verificada y los PR están publicados.
+**Pendiente externo:** confirmación del docente sobre el equipo de dos integrantes, procedencia exacta de la versión XLSX 2005–2026, plantilla Canvas y comprobante de entrega oficial. La instalación independiente de Cristian en Windows ya se verificó. La escritura en las ramas de revisión ya fue verificada y los PR están publicados.
 
 ## Sumativa 2 (F3) — ejecución y controles
 

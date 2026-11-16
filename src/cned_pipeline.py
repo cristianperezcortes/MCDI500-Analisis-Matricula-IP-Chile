@@ -452,6 +452,45 @@ def validar_fase1(df: pd.DataFrame) -> dict:
            }
 
 
+def auditar_columnas_originales_completas(original: pd.DataFrame, final: pd.DataFrame) -> dict:
+    """Comprueba que F2 no altera datos completos que permanecen en el resultado.
+
+    Los campos numéricos se cotejan exactamente y los textuales se cotejan tras
+    quitar espacios periféricos, única limpieza autorizada para textos completos.
+    No exige preservar columnas descartadas POR AUSENCIAS; sí rechaza la pérdida
+    de columnas completas. Las columnas parcialmente ausentes se validan aparte.
+    """
+    if len(original) != len(final):
+        raise AssertionError('No se pueden comparar columnas con distinta cantidad de filas')
+    num = 0
+    texto = 0
+    for columna in original.columns:
+        fuente = original[columna]
+        # Marcadores textuales como 'Null' no representan información completa.
+        # Se excluyen de este control solo tras normalizar su semántica de NA.
+        fuente_normalizada = (normalizar_valores_nulos(original[[columna]])[columna]
+                              if not pd.api.types.is_numeric_dtype(fuente) else fuente)
+        if fuente_normalizada.isna().any():
+            continue
+        if columna not in final.columns:
+            raise AssertionError(f'Columna original completa eliminada: {columna}')
+        salida = final[columna]
+        if pd.api.types.is_numeric_dtype(fuente):
+            anterior = pd.to_numeric(fuente, errors='raise').to_numpy()
+            posterior = pd.to_numeric(salida, errors='raise').to_numpy()
+            if not np.array_equal(anterior, posterior):
+                raise AssertionError(f'Columna numérica completa modificada: {columna}')
+            num += 1
+        else:
+            anterior = fuente.astype('string').str.strip()
+            posterior = salida.astype('string').str.strip()
+            if not anterior.equals(posterior):
+                raise AssertionError(f'Columna textual completa modificada: {columna}')
+            texto += 1
+    return {'numericas_completas': num, 'textuales_completas': texto,
+            'columnas_completas_auditadas': num + texto}
+
+
 def validar_fase2(original: pd.DataFrame, final: pd.DataFrame, audit: dict) -> dict:
     """Pruebas de conservación y auditabilidad, sin exigir falsamente cero nulos."""
     if len(original)!=len(final):raise AssertionError('El pipeline eliminó o agregó registros')
@@ -472,6 +511,7 @@ def validar_fase2(original: pd.DataFrame, final: pd.DataFrame, audit: dict) -> d
         if variable != 'Vacantes':
             uf = final['moneda_normalizada'].eq('UF') & obs.isna()
             assert pred[uf].isna().all(), 'Se han imputado valores UF con pesos'
+    auditar_columnas_originales_completas(original, final)
     assert audit['columnas_salida']==final.shape[1]
     return {'filas_sin_perdidas':len(final),'columnas_salida':final.shape[1],
             'filas_anomalia_temporal':int(final['inicio_posterior_a_2025'].sum()),

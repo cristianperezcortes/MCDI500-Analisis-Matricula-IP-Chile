@@ -1,0 +1,10 @@
+digraph flujo {
+ graph [rankdir=LR, bgcolor="white", fontname="Arial", pad="0.1", nodesep="0.25", ranksep="0.28", dpi=160];
+ node [shape=box, style="rounded,filled", color="#446481", fillcolor="#eaf0f7", fontcolor="#14304d", fontname="Arial", fontsize=11, margin="0.12,0.11"];
+ edge [color="#627d9b", penwidth=1.35, arrowsize=0.7];
+ F1[label="F1 · Definición\nPregunta, fuente CNED\nperfil y metadatos"];
+ F2[label="F2 · Datos\nObtención → calidad\nimputación y validación"];
+ F3[label="F3 · Algoritmos\nPOO, equivalencia\nbenchmark y pruebas"];
+ F4[label="F4 · Comunicación\nPresentación y\nvisualización (pendiente)",fillcolor="#f5f5f5",color="#939ea9"];
+ F1->F2->F3->F4;
+}
