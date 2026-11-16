@@ -34,6 +34,8 @@ jobs:
           PY
       - name: Pruebas unitarias (sin base original)
         run: python -m pytest -q tests --junitxml=evidencias/pytest_ci.xml
+      - name: Auditar concordancia de entregables F3
+        run: python scripts/auditar_entrega_f3.py
       - name: Guardar reporte de pruebas
         if: always()
         uses: actions/upload-artifact@v4

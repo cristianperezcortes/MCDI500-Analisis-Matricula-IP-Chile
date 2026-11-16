@@ -35,3 +35,11 @@ Se comprueba **igualdad exacta** entre DataFrames F2 y F3 con `pd.testing.assert
 ## Colaboración y límites
 
 Los avances se versionan mediante ramas y pull requests con fecha y autor real. La evaluación oficial y la aprobación de una nómina de dos integrantes corresponde al docente; la guía general indica 3–4 estudiantes. Las mediciones de memoria con `tracemalloc` no abarcan toda la memoria nativa NumPy/Pandas.
+
+## Auditoría posterior a la ejecución
+
+- `python scripts/auditar_entrega_f3.py`: verifica notebooks guardados, informe, referencias, cifras del benchmark y archivos; se puede ejecutar en GitHub sin el Excel.
+- `python scripts/auditar_entrega_f3.py --integracion`: verifica SHA-256 del Excel local y recomputa la equivalencia completa F2/F3. Requiere haber ejecutado previamente F2.
+- `tests/test_f3_regresion_portatil.py`: prueba un conjunto **sintético**, no corresponde a registros reales del CNED.
+- Las pruebas sin Excel se distinguen explícitamente de las de integración real; no se declara su aprobación por omisión.
+- El informe DOCX/PDF usa las cifras de la misma ejecución registrada en `evidencias/f3_benchmarks.csv`. Si se repite el benchmark, debe actualizarse la tabla y figura del informe antes de enviar.

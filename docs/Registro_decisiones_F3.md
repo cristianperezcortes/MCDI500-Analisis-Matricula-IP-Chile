@@ -14,3 +14,7 @@
 | F3-10 | Mantener PR de F1/F2 independiente de F3 | Historia y revisión académica trazable por evaluación |
 
 **Fuentes técnicas:** Salinas Silva (2026a, 2026b), Python Software Foundation (s. f.) y McKinney (2022). Medidas y pruebas: `evidencias/f3_benchmarks.csv`, `f3_equivalencia_f2.json` y `f3_resultados_pruebas.txt`.
+
+| F3-11 | Añadir regresión portátil sin Excel | Dataset sintético con faltantes CLP/UF, ceros y niveles; confirma F2=F3 sin publicar datos originales. |
+| F3-12 | Unificar métricas del informe con evidencia | Se corrigió el desacople entre PDF antiguo y `f3_benchmarks.csv`; texto, tabla y figura reflejan una misma ejecución. |
+| F3-13 | Puerta de calidad reproducible | `scripts/auditar_entrega_f3.py` revisa notebooks, informes, métricas y permite validación con SHA-256 del Excel al usar `--integracion`. |
