@@ -19,7 +19,7 @@ La reproducción crea una copia temporal del proyecto, ejecuta F1→F2→F3 en p
 ## Coherencia científica
 Los objetivos **analíticos** son distribución, concentración (CR3 y HHI) y sensibilidad del registro atípico IP Santo Tomás. La selección, imputación y limpieza son **actividades metodológicas**, no objetivos de investigación. El archivo docs/objetivos_analiticos_f1f3.txt establece su redacción canónica.
 
-Los notebooks F1, F2 y F3 y el informe F1/F2 deben mantener esa misma formulación. El control scripts/auditar_consistencia_academica.py comprueba su correspondencia. Hasta actualizar el Word/PDF original del informe en este PR, **esta verificación debe considerarse pendiente**, incluso si las pruebas Python pasan.
+Los notebooks F1, F2 y F3 y el informe F1/F2 deben mantener esa misma formulación. El control scripts/auditar_consistencia_academica.py comprueba su correspondencia. El Word/PDF actualizado se incorporó a la rama mediante la automatización de documentos; verificar su correspondencia con los notebooks y la guía mediante CI antes de fusionar.
 
 ## Límites institucionales (pendientes, no aprobados)
 1. Plantilla institucional solicitada al profesor, aún no disponible para cotejo.

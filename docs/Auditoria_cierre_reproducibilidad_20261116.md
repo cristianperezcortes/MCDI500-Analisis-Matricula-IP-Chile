@@ -7,7 +7,7 @@
 - **53/53 pruebas** aprobadas con el Excel suministrado y sus validaciones de integración.
 - **F1 → F2 → F3** ejecutados sin errores en una copia temporal del proyecto; F2 entregó 4.731 filas y 68 columnas, totales 137.481 y 439.607.
 - Verificación del SHA-256 de la fuente Excel y de las versiones de paquetes en el entorno Python 3.13.
-- Se insertaron **dos figuras reales** en el Word/PDF local corregido de F1/F2 y se cambiaron los objetivos específicos (distribución, CR3/HHI y sensibilidad). **La versión binaria actualizada aún debe incorporarse a esta rama** antes de aprobar y fusionar este PR.
+- Se insertaron **dos figuras reales** en el Word/PDF local corregido de F1/F2 y se cambiaron los objetivos específicos (distribución, CR3/HHI y sensibilidad). **La versión Word/PDF fue sincronizada automáticamente** en el commit `5d84232e` de esta rama. Aún deben aprobar las comprobaciones finales antes de fusionar.
 
 ## Modificaciones propuestas
 1. requirements.txt fija Jupyter Notebook 7.5.3 (junto a JupyterLab 4.5.3).
