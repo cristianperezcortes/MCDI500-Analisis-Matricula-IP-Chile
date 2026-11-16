@@ -24,8 +24,12 @@ flowchart TD
 | Ingesta y auditoría de calidad | Procesos | Implementado | F2 §2-3; src/cned_pipeline.py |
 | Fuente→extracción→validación→salida | Flujo reproducible | Implementado local | data/raw, interim, processed; tests/ |
 | Ausencia, imputación, monedas, cuartiles | Decisiones técnicas | Implementado | Registro_decisiones.md; comparacion_imputaciones.csv |
-| Ramas, estructura F1–F4 y README | Organización repositorio | Implementado; PR #1–4 integrados | README; GitHub `main`, PR #1–4 |
+| Ramas, estructura F1–F4 y README | Organización repositorio | Implementado; PR #1–7 integrados | README; GitHub `main`, PR #1–7 |
 | Narrativa, código, salidas, métricas | Estructura notebooks | Implementado y ejecutado | F1/*.ipynb; F2/*.ipynb |
 | Algoritmos OOP y visualización final | F3 implementada; F4 pendiente | Futuro | F3/README.md; F4/README.md |
 
-**Justificación:** el mapa organiza la planificación conceptual alrededor de evidencias verificables del problema. El pipeline medido responde a esa planificación sin atribuir trabajo de F3/F4 a esta entrega. Los PR #1–4 se integraron con autoría real. F4 continúa pendiente; no se atribuyen resultados de esa fase.
+**Justificación:** el mapa organiza la planificación conceptual alrededor de evidencias verificables del problema. El pipeline medido responde a esa planificación sin atribuir trabajo de F3/F4 a esta entrega. Los PR #1–7 se integraron con autoría real. F4 continúa pendiente; no se atribuyen resultados de esa fase.
+
+**Interpretación:** CR3 y HHI son indicadores de concentración por dimensión; institución, región y área no comparten la misma partición ni cantidad de grupos. Ver `docs/Nota_metodologica_concentracion.md`.
+
+**Fuente institucional:** CNED–INDICES, [portal oficial](https://cned.cl/institucional/bases-de-datos/); copia analizada identificada por SHA-256. Ver `docs/Proveniencia_CNED_INDICES.md`.

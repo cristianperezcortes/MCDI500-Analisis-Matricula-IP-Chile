@@ -1,42 +1,39 @@
-# Estado de integración y trazabilidad — MCDI500 (Grupo 8)
+# Estado de integración y trazabilidad — MCDI500 / Grupo 8
 
-**Fecha de revisión:** 16 de noviembre de 2026 (UTC).  
-**Repositorio:** [MCDI500-Analisis-Matricula-IP-Chile](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile) · **rama principal:** `main`.  
-**Integrantes declarados:** Cristian Pérez Cortés y Claudio Navarrete Sims.
+**Corte documental:** 16 de noviembre de 2026, después del PR #7.  
+**Repositorio oficial:** https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile  
+**Rama principal:** `main` · **commit comprobado:** `dfd987de9d479d62330ffc06261294b58507d0fd`.
 
-## Integraciones confirmadas en GitHub
+## Historial de integraciones
 
-Los **seis Pull Requests siguientes fueron integrados a `main`**, sin reconstruir ni alterar retrospectivamente sus commits.
-
-| Pull Request | Aporte | Resultado |
+| PR | Propósito | Confirmación |
 |---|---|---|
-| [#1](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/1) | Corrección de Sumativa 1: F1/F2, entorno, procesamiento, documentación | **Merged**; commit `d0369448` |
-| [#2](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/2) | Sumativa 2: núcleo algorítmico F3, POO y eficiencia | **Merged**; commit `5f017cc2` |
-| [#3](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/3) | Auditoría adicional F3, informes, mediciones de Windows | **Merged**; commit `812b7153` |
-| [#4](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/4) | Notebook ejecutado en Windows por Cristian y validación de concordancia notebook/CSV | **Merged**; commit `1f82eda3` |
-| [#5](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/5) | Corrección académica F1/F2: índice, mapa conceptual, control de conservación y documentación histórica | **Merged**; commit `9a6a8b98` |
-| [#6](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/6) | Registro exacto de PR #1–5, límites de revisión y trazabilidad | **Merged**; commit `ea22811e` |
+| [#1](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/1) | Correcciones de F1/F2 y entorno | Integrado |
+| [#2](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/2) | Desarrollo F3 orientado a objetos y mediciones | Integrado |
+| [#3](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/3) | Auditorías, Word/PDF y benchmark Windows | Integrado |
+| [#4](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/4) | Salidas reales Jupyter de Cristian y control notebook/CSV | Integrado |
+| [#5](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/5) | Índice, mapa y pruebas de conservación F1/F2 | Integrado |
+| [#6](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/6) | Trazabilidad del historial y revisión colaborativa | Integrado |
+| [#7](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/7) | Reproducibilidad Windows/Ubuntu, objetivos y documentos | Integrado |
 
-**Estado de `main` al verificar:** `ea22811e7b138d611f7d06e8f8e02f1456b19cd0`.  
-**Validación automática posterior a PR #5:** [GitHub Actions — ejecución satisfactoria](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/actions/runs/43791591040). Se registraron **47 pruebas aprobadas, 3 omitidas por requerir el Excel original y 28/28 controles documentales aprobados** en el entorno de GitHub. Estas verificaciones no sustituyen la ejecución local con datos reales.
+**Verificación posterior al PR #7:** [GitHub Actions](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/actions/runs/43900481319), completado correctamente en Windows y Ubuntu. Cada sistema registró 50 pruebas aprobadas, 3 omitidas por no disponer del Excel crudo, auditoría F3 de 28/28 y auditoría F1/F2 de 23/23. El equipo conserva evidencia local de reproducción integral con la fuente CNED y 53/53 pruebas aprobadas.
 
-## Revisión y autoría: hechos comprobados y límites
+**Cambios posteriores a este corte:** consultar [Pull requests](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pulls) y las ejecuciones asociadas en Actions. Este documento no anticipa el estado futuro de PR aún no fusionados.
 
-- GitHub conserva las contribuciones y las operaciones de integración realizadas por ambas cuentas. Las aprobaciones formales de los PR anteriores se registran donde existen.
-- **PR #5 no tiene una revisión formal `APPROVED` registrada** en su sección `Reviews` antes de la fusión, pese a que la integración fue exitosa. Una revisión o comentario posterior puede dejar constancia de un examen realmente realizado, **pero no constituye ni reemplaza una aprobación anterior al Merge**.
-- La primera entrega se conserva como evidencia histórica. Su historial inicial concentrado en pocos commits no puede convertirse retrospectivamente en un desarrollo semanal incremental.
-- Los archivos y notebooks de la primera entrega se mantienen para trazabilidad; la versión vigente utiliza `F1/F1_Definicion_Cned.ipynb`, `F2/F2_Preprocesamiento_Cned.ipynb`, `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb` y los informes corregidos en `docs/`. Ver `docs/README_VERSIONES.md`.
-- El libro Excel original `Base-INDICES-Matricula-2005-2026.xlsx` **no está publicado en GitHub**. La reproducibilidad integral con esa fuente debe verificarse en un entorno que disponga del archivo y su huella SHA-256.
+## Revisión y autoría
 
-## Pendientes académicos que GitHub no puede acreditar
+La actividad registrada es auténtica: ambos integrantes contribuyeron al proyecto en diferentes fechas. El historial original de la primera entrega concentró desarrollo en pocos commits y se conserva sin alteraciones. La aprobación formal del PR #5 no quedó registrada antes de su integración; otras revisiones están disponibles en GitHub, incluido el PR #7 cuya aprobación se registró después del Merge. No se atribuyen aprobaciones que no existieron en ese momento.
 
-1. Cotejar los informes definitivos con la plantilla institucional original de Canvas.
-2. Conservar la respuesta formal del docente sobre el equipo de dos integrantes, si llega a solicitarse.
-3. Acreditar la fecha y URL precisas de obtención del XLSX CNED 2005–2026, o documentar explícitamente que esa procedencia no pudo recuperarse.
-4. Comprobar y conservar el **acuse de entrega en Canvas**. La fusión de PR no equivale a presentar la evaluación.
+## Documentos y datos vigentes
 
-> Este documento es un registro factual de versiones y verificaciones, no una calificación académica ni un certificado de aprobación docente.
+- F1: `F1/F1_Definicion_Cned.ipynb`; F2: `F2/F2_Preprocesamiento_Cned.ipynb`; F3: `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb`.
+- Informes definitivos: `docs/Informe_Sumativa1_F1_F2_Guia_Integrada.{docx,pdf}` y `docs/f3_s02_entregable_g8.{docx,pdf}`.
+- **Fuente primaria institucional:** Consejo Nacional de Educación (CNED), sistema INDICES y su [portal oficial de bases de datos](https://cned.cl/institucional/bases-de-datos/). El equipo utilizó una copia cuyo nombre termina en `2005-2026.xlsx`. El portal público consultado indica la edición 2005–2025: la URL directa y fecha exacta del ejemplar 2005–2026 no se han acreditado; ver `docs/Proveniencia_CNED_INDICES.md`.
+- **Año de matrícula:** 2025. **Fechas de elaboración/revisión de informes:** noviembre de 2026. No confundir ambas fechas.
+- Las versiones de la primera entrega permanecen rotuladas como históricas. El Excel original se excluye correctamente de GitHub.
 
-## Cambios posteriores sometidos a revisión
+## Pendientes institucionales
 
-El [PR #7](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/pull/7) propone reproducibilidad en Windows/Ubuntu y objetivos académicos concordantes. **No se declara integrado mientras permanezca abierto**; el registro anterior corresponde al corte de PR #6.
+Plantilla institucional original de Canvas; respuesta formal del docente sobre el grupo de dos integrantes; trazabilidad de descarga exacta del ejemplar CNED 2005–2026; y constancia de entrega en Canvas. Ninguno debe considerarse acreditado solamente por una prueba de GitHub.
+
+> Este registro acredita versiones y ejecuciones verificables, no una nota docente ni la entrega oficial.

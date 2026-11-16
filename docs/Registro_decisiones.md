@@ -4,7 +4,7 @@
 |---|---|---|---|
 | D01 | Unidad de análisis | Registro agregado de programa/sede/campus, no estudiante individual | 4.731 filas frente a 137.481 matrículas de primer año |
 | D02 | Cobertura | IP/2025, se conservan pregrado y posgrado por comparabilidad | 4.714 + 17 registros |
-| D03 | Fuente original | Excel 2005–2026 suministrado, SHA-256 en metadatos, no modificar | 260.307 × 62, versión de descarga exacta pendiente |
+| D03 | Procedencia institucional | Fuente primaria CNED–INDICES (portal oficial de bases de datos); copia proporcionada al equipo con nombre 2005–2026 y SHA-256 conservado; no modificar | 260.307 × 62; enlace y fecha de descarga específicos sin acreditar; el portal público anuncia edición 2005–2025 |
 | D04 | Alcance F1/F2 | F1 solo define/explora; F2 obtiene/limpia/transforma | Extracto `data/interim/` escrito solo en F2 |
 | D05 | Valores faltantes textuales | Tratar `Null` como ausente sin convertir 0 en NA | 13 columnas enteramente vacías |
 | D06 | Campos con >90% NA | Excluir las 2 columnas identificadas, sin tocar matrícula | Grado Académico y Mención o Especialidad |
@@ -18,10 +18,14 @@
 | D14 | Cuartiles matrícula | `qcut` de matrícula total, conserva empates, no tramos arbitrarios | 1.223 / 1.169 / 1.165 / 1.174 registros |
 | D15 | Anomalía temporal | Retener caso IP Santo Tomás, medir sensibilidad sin eliminarlo | 1 caso; 39 matrículas, 0,0284% |
 | D16 | Duplicaciones | No eliminar por coincidencias de programa/sede sin verificar campus/jornada | 0 duplicados idénticos |
-| D17 | Concentración | Participaciones, CR3 e HHI sobre primer año **observado** | Instituciones CR3 53,916%; regiones 79,243%; áreas 79,806% |
+| D17 | Concentración | Participaciones, CR3 e HHI sobre primer año **observado**, comparando dentro de dimensiones homólogas | Instituciones CR3 53,916%; regiones 79,243%; áreas 79,806%. Las dimensiones tienen distinto número de grupos, por lo que no son directamente comparables sin contextualización |
 | D18 | Reproducibilidad | Versiones exactas, kernel, rutas relativas, pruebas con salida guardada | `requirements.txt`, F1/F2, `evidencias/` |
 | D19 | Colaboración | Nuevos commits reales por autor, rama y PR, nunca retrofechar | Contribuciones auténticas de ambos integrantes; PR #1–4 integrados en main |
 
 ## Riesgos residuales
 
 No se conoce el mecanismo de ausencia de datos monetarios; MAE sobre valores observados ocultados no permite probar validez causal ni ausencia aleatoria. La versión 2005–2026 necesita URL y fecha de descarga acreditadas. La instalación y ejecución independientes en Windows y la autoría colaborativa ya se acreditaron. Siguen pendientes la plantilla, la procedencia exacta y la validación administrativa del grupo.
+
+## Fechas y límites de la fuente
+
+Año de matrícula investigado: **2025**. Informes académicos corregidos y auditados: **noviembre de 2026**. Origen institucional: portal oficial CNED–INDICES; la copia local 2005–2026 no cuenta con una URL directa y fecha de descarga archivadas. Consultar `docs/Proveniencia_CNED_INDICES.md`.
