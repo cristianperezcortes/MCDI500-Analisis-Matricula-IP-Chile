@@ -1,12 +1,12 @@
-# PR #10 — Registro de publicación de informes oficiales UNAB (Grupo 8)
+# Registro de publicación de informes oficiales UNAB — PR #10 a PR #12 (Grupo 8)
 
-**Estado: PREPARACIÓN — los cuatro archivos DOCX/PDF aún deben adjuntarse a esta rama antes de fusionar.**
+**Estado verificable al 17-11-2026:** PR #10 integró el manifiesto; PR #11 integró una carga equivocada; PR #12 contiene los cuatro archivos correctos en la rama `docs/correccion-informes-unab`, pero **no se declara integrado en `main` mientras no se fusione**. La comprobación se refiere al commit de la rama revisada.
 
 **Curso:** MCDI500, Programación para la Ciencia de Datos. **Integrantes confirmados por el docente:** Cristian Pérez Cortés y Claudio Navarrete Sims. **Fecha de documentos:** 16 de noviembre de 2026.
 
 ## Archivos definitivos aprobados por el equipo para publicar
 
-Guardar cada archivo directamente bajo `docs/`, **sin cambiar su nombre**:
+Archivos presentes en `docs/` de la rama del PR #12, con sus nombres definitivos y huellas verificadas contra los cuatro archivos entregados por el equipo:
 
 | Archivo | Tamaño (bytes) | SHA-256 esperado |
 |---|---:|---|
@@ -17,14 +17,18 @@ Guardar cada archivo directamente bajo `docs/`, **sin cambiar su nombre**:
 
 Los archivos locales se inspeccionaron: DOCX como contenedores ZIP válidos y PDF legibles con 7 páginas (F1/F2) y 8 páginas (F3). Los SHA-256 identifican **exactamente** las versiones recibidas del equipo, no acreditan envío a Canvas.
 
-## Checklist antes de aprobar PR #10
+## Comprobaciones de la rama PR #12
 
-- [ ] Confirmar que los **cuatro archivos** estén disponibles en la rama `docs/pr10-informes-unab-definitivos-20261116` dentro de `docs/`
-- [ ] Comparar sus hashes SHA-256 con la tabla anterior; no generar archivos alternativos con el mismo nombre
-- [ ] Actualizar `README.md` con vínculos a los cuatro documentos vigentes y una nota que preserve los anteriores como históricos; hacerlo **después** de subirlos
-- [ ] Verificar los 11 apartados institucionales, las portadas de dos integrantes, figuras, páginas y legibilidad
-- [ ] Comprobar las diferencias del PR: sólo documentos finales, este registro y README; **sin editar notebooks, `src/`, `tests/` ni datos**
-- [ ] Confirmar GitHub Actions en Windows y Ubuntu; el CI no valida exhaustivamente el contenido de Word/PDF
-- [ ] Cristian registra su revisión genuina; seleccionar Ready for review y fusionar `main` sólo después del control
+- [x] Los **cuatro archivos** se encuentran en `docs/` dentro de `docs/correccion-informes-unab` con los nombres exactos.
+- [x] Los cuatro SHA-256 y tamaños coinciden con los archivos locales originales aprobados por el equipo. Sus hashes Git blob también coinciden.
+- [x] El PR #12 reemplaza/retira los informes cargados erróneamente y no cambia notebooks, `src/`, `tests/`, `requirements.txt` ni conjuntos de datos.
+- [x] Se actualizó `README.md` con enlaces a versiones oficiales, referencias históricas y conformación de Grupo 8 confirmada por correo del docente.
+- [x] GitHub Actions del commit previo a estos ajustes registró resultado `success` en Windows y Ubuntu.
+- [ ] Confirmar **GitHub Actions del nuevo commit** de documentación en ambos sistemas antes del merge.
+- [ ] Revisar contenido académico y formateo final de Word/PDF por los integrantes; la CI no evalúa el mérito científico.
+- [ ] Registrar revisión genuina y fusionar PR #12 a `main` cuando todas las comprobaciones estén verdes.
+- [ ] Verificar los cuatro enlaces en `main` después del merge y efectuar la entrega oficial en Canvas.
 
-**Importante:** la subida a GitHub no equivale a la entrega oficial en Canvas. Evitar declarar PR #10 terminado antes de acreditar los cuatro archivos y la CI.
+**Precisión sobre historial:** PR #10 se fusionó antes de la carga de los informes; PR #11 incorporó los archivos incorrectos; PR #12 reúne la rectificación. No se atribuye al PR #10 una subida que no ocurrió en él.
+
+**Precisión sobre pruebas:** las pruebas de GitHub Actions omiten controles que necesitan el Excel original, mantenido fuera de GitHub; existe evidencia de validaciones locales anteriores. Ninguna prueba automatizada sustituye la revisión académica ni prueba la entrega en Canvas.
