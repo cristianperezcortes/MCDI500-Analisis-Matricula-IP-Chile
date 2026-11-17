@@ -125,13 +125,24 @@ Los índices **CR3 y HHI** se interpretan por separado para instituciones, regio
 
 ## Informes académicos oficiales — Grupo 8
 
-Se encuentran disponibles los informes definitivos de las fases 1, 2 y 3 del proyecto MCDI500, en formatos Word y PDF.
+### Versiones finales interpretativas
 
-| Entregable | Word | PDF |
+Los siguientes documentos PDF corresponden a las versiones finales interpretativas de los informes académicos del proyecto MCDI500 de la Universidad Andrés Bello, elaborados por el Grupo 8.
+
+| Entregable | PDF final |
+|---|---|
+| Informe Fases 1 y 2 | [Ver PDF final](docs/UNAB_Informe_Fases_1_y_2_Grupo8_Final.pdf) |
+| Informe Fase 3 | [Ver PDF final](docs/UNAB_Informe_Fase_3_Grupo8_Final.pdf) |
+
+### Versiones anteriores e históricas
+
+Se conservan los informes publicados anteriormente mediante el PR #13, para mantener la trazabilidad documental y el historial de versiones del proyecto.
+
+| Entregable | Word | PDF anterior |
 |---|---|---|
 | Informe Fases 1 y 2 | [Descargar Word](docs/UNAB_Informe_Fases_1_y_2_Grupo8.docx) | [Ver PDF](docs/UNAB_Informe_Fases_1_y_2_Grupo8.pdf) |
 | Informe Fase 3 | [Descargar Word](docs/UNAB_Informe_Fase_3_Grupo8.docx) | [Ver PDF](docs/UNAB_Informe_Fase_3_Grupo8.pdf) |
 
-Estos documentos corresponden a las versiones finales revisadas por el Grupo 8. Su incorporación al repositorio se realizó mediante el PR #13, aprobado con cuatro verificaciones automáticas exitosas.
+Las versiones finales interpretativas se incorporan mediante el PR #14, sin modificar los notebooks, el código Python ni los resultados analíticos previamente validados.
 
-La entrega oficial en la plataforma académica se realiza de forma independiente.
+La entrega oficial en Canvas se realiza de forma independiente.
