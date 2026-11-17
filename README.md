@@ -122,3 +122,16 @@ El flujo `.github/workflows/validar_mcdi500.yml` ejecuta verificaciones sin Exce
 ## Precaución sobre indicadores de concentración
 
 Los índices **CR3 y HHI** se interpretan por separado para instituciones, regiones y áreas de conocimiento. Las tres dimensiones tienen números y definiciones de grupos diferentes; comparar sus valores directamente no constituye, por sí solo, evidencia de que una dimensión esté «más concentrada» en sentido estructural. Ver `docs/Nota_metodologica_concentracion.md`.
+
+## Informes académicos oficiales — Grupo 8
+
+Se encuentran disponibles los informes definitivos de las fases 1, 2 y 3 del proyecto MCDI500, en formatos Word y PDF.
+
+| Entregable | Word | PDF |
+|---|---|---|
+| Informe Fases 1 y 2 | [Descargar Word](docs/UNAB_Informe_Fases_1_y_2_Grupo8.docx) | [Ver PDF](docs/UNAB_Informe_Fases_1_y_2_Grupo8.pdf) |
+| Informe Fase 3 | [Descargar Word](docs/UNAB_Informe_Fase_3_Grupo8.docx) | [Ver PDF](docs/UNAB_Informe_Fase_3_Grupo8.pdf) |
+
+Estos documentos corresponden a las versiones finales revisadas por el Grupo 8. Su incorporación al repositorio se realizó mediante el PR #13, aprobado con cuatro verificaciones automáticas exitosas.
+
+La entrega oficial en la plataforma académica se realiza de forma independiente.
