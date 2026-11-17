@@ -1,6 +1,6 @@
 # Control de publicación — versiones finales interpretativas UNAB, Grupo 8
 
-**Estado:** preparación. Los dos PDF binarios todavía deben añadirse a esta rama antes del merge. No presentar este registro como evidencia de una carga completada.
+**Estado:** dos PDF finales interpretativos incorporados a la rama del PR #14. README actualizado. Pendiente de revisión final, verificación de integridad y fusión con main.
 
 ## Archivos verificados que deben publicarse en `docs/`
 
