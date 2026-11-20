@@ -1,0 +1,9 @@
+Transcripción del resultado de la ejecución local en Windows, 20/11/2026.
+Fuente: captura de consola que muestra la lectura del registro original con type.
+Base del clon verificado: 5b951672d0a7eeaf9f6080cfbba4f173f00e8494.
+Comando registrado para generar el respaldo: python -m pytest -q tests.
+Se ejecutó después de generar el extracto de F2 a partir del Excel CNED verificado.
+
+58 passed in 47.36s
+
+La ejecución corresponde a la suite F1–F3 existente al momento de la validación.

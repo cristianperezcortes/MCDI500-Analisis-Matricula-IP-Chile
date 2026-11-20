@@ -1,4 +1,4 @@
-# MCDI500 — Proyecto CNED IP 2025 (Fases 1, 2 y 3)
+# MCDI500 — Proyecto CNED IP 2025 (Fases 1 a 4)
 
 **Asignatura:** Programación para la Ciencia de Datos. **Programa:** Magíster en Ciencia de Datos e Inteligencia Artificial (UNAB). **Docente:** Omar Iván Salinas Silva.
 **Grupo 8 — integrantes confirmados por el equipo:** Cristian Pérez Cortés y Claudio Navarrete Sims. Óscar Quezada y Carlos Vergara **no** integran este grupo de trabajo. **Nota administrativa:** la guía menciona grupos de 3–4 estudiantes; se debe comunicar al docente que el Grupo 8 está formado por 2 y solicitar su validación formal, sin atribuir dicha aprobación antes de recibirla.
@@ -21,6 +21,7 @@ F1/F1_Definicion_Cned.ipynb         definición, fuente, perfil y entorno; NO li
 F2/F2_Preprocesamiento_Cned.ipynb   obtiene, diagnostica, limpia, transforma, valida
 src/cned_pipeline.py               funciones reusables y contratos del dato
 F3/S2_F3_NucleoAlgoritmico_Cned.ipynb  núcleo POO, benchmarks, pruebas
+F4/F4_Visualizacion_Comunicacion.ipynb  visualizaciones, interpretación y sensibilidad
 src/f3_transformaciones.py          clase base y tres transformaciones
 src/f3_pipeline.py                  orquestador y equivalencia con F2
 src/f3_medicion.py                  timeit y tracemalloc
@@ -104,7 +105,7 @@ python scripts/auditar_consistencia_academica.py
 - Se comparan eliminación, media global, mediana global y mediana jerárquica, con enmascaramiento 10%, MAE y desviación antes/después, semilla 42.
 - Las variables transformadas derivadas tienen banderas; se generan one-hot de nivel, escala 0–1 y log1p sin alterar los conteos de matrícula.
 - Se conservan los 4.731 registros y se documenta la anomalía temporal de IP Santo Tomás mediante sensibilidad.
-- **F3 implementada y revisada:** núcleo POO, equivalencia estricta F2–F3, benchmarks y pruebas sintéticas autónomas; **F4 permanece pendiente**.
+- **F3 implementada y revisada:** núcleo POO, equivalencia estricta F2–F3, benchmarks y pruebas sintéticas autónomas. **F4:** visualizaciones e interpretación desde los agregados versionados.
 
 ## Colaboración GitHub
 Repositorio original: https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile
@@ -122,6 +123,14 @@ El flujo `.github/workflows/validar_mcdi500.yml` ejecuta verificaciones sin Exce
 ## Precaución sobre indicadores de concentración
 
 Los índices **CR3 y HHI** se interpretan por separado para instituciones, regiones y áreas de conocimiento. Las tres dimensiones tienen números y definiciones de grupos diferentes; comparar sus valores directamente no constituye, por sí solo, evidencia de que una dimensión esté «más concentrada» en sentido estructural. Ver `docs/Nota_metodologica_concentracion.md`.
+
+## Sumativa 3 (F4) — visualización y comunicación
+
+- [Guía de ejecución y vínculo entre objetivos y figuras](F4/README.md).
+- [Notebook F4 ejecutado](F4/F4_Visualizacion_Comunicacion.ipynb) con tres figuras exportadas y análisis de sensibilidad.
+- [Informe integrado en PDF](docs/f4_s03_entregable_g8.pdf) y [Word editable](docs/f4_s03_entregable_g8.docx).
+- [Historial de cambios](changelog.md) y [transcripción de las 58 pruebas locales](evidencias/pytest_58_pruebas.txt).
+- Presentación audiovisual en Canvas Studio, con enlace pendiente.
 
 ## Informes académicos oficiales — Grupo 8
 
