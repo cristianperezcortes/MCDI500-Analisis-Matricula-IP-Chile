@@ -41,7 +41,7 @@ data/processed/                     CSV final e indicadores
 - **Informe Sumativa 1 corregido:** `docs/Informe_Sumativa1_F1_F2_Guia_Integrada.pdf` (y su DOCX editable).
 - **Informe Sumativa 2 F3 definitivo:** `docs/f3_s02_entregable_g8.pdf` (y su DOCX editable).
 - **Notebooks vigentes:** `F1/F1_Definicion_Cned.ipynb`, `F2/F2_Preprocesamiento_Cned.ipynb`, `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb`.
-- **Versión histórica de Sumativa 1 (60/99):** `F1/F1_Definición.ipynb`, `F2/F2_procesamiento.ipynb`, `docs/Informe_Tecnico_Semana1.pdf`, `docs/informe_tecnico.md`, `docs/Revision_calidad_datos.md` y `data/processed/matricula_ip_2025_procesada.csv` (**48 columnas**, resultado original). No usarlos como dataset vigente.
+- **Versión histórica de Sumativa 1 (60/99):** `historico/F1/F1_Definición.ipynb`, `historico/F2/F2_procesamiento.ipynb`, `docs/Informe_Tecnico_Semana1.pdf`, `docs/informe_tecnico.md`, `docs/Revision_calidad_datos.md` y `historico/data/processed/matricula_ip_2025_procesada.csv` (**48 columnas**, resultado original). No usarlos como dataset vigente.
 - **Resultado corregido:** ejecutar F2 para generar `data/processed/matricula_ip_2025_procesada_v3.csv` (**68 columnas**). El XLSX original nunca debe alterarse ni publicarse.
 - **Bitácora de cambios:** `docs/README_VERSIONES.md`; mapa de fases actualizado `docs/mapa_conceptual.md`.
 - **Integración Git:** PR #1–7 integrados a `main` al corte del 16/11/2026; para cambios posteriores consultar los PR y checks vigentes. Se conserva la autoría real de cada participante.
