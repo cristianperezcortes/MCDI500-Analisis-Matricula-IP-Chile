@@ -1,5 +1,14 @@
 # Historial de cambios
 
+## 22 de noviembre de 2026 · Cierre de relevancia y continuidad entre fases
+
+- F1: se explicitó la relevancia externa del análisis de concentración y se distinguió de afirmaciones sobre calidad, acceso o causalidad ([453891c](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/453891c7082553c05209667874febbc265d1569e)).
+- F1: se añadieron pruebas de sus objetivos, alcance, restricciones, supuestos y salidas de notebook ([77479a7](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/77479a7a9da3aec374e9df3c2aafda200e863894)).
+- F4: se cotejó la evidencia versionada de equivalencia F2–F3 antes de generar visualizaciones; no equivale a reproducir el Excel original ([abc39cf](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/abc39cf8fd54239c3f1f7d07bebba5b6ec45ed0e)).
+- F4: se documentó por qué se visualizan agregados en unidades originales y no una matriz transformada ([26c8d7c](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/26c8d7c00ee7e778d07347596b8f3d7d622179bb)).
+- Tests: se controla automáticamente la coherencia entre el registro histórico de equivalencia F3 y F4 ([fdb4b06](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/fdb4b06ae7f5d6f69a3ff9ba15f4d7082d4b7081)).
+
+
 ## 22 de noviembre de 2026 · Validación autónoma F4
 
 - Se añadieron pruebas de integridad de agregados y metadatos de F2 para F4; commit [4b96457](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/4b9645702196e466311afdc3dd772076c6bb3fdf).
