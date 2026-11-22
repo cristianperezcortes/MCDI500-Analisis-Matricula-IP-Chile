@@ -160,3 +160,11 @@ La entrega oficial en Canvas se realiza de forma independiente.
 ## Reproducibilidad IP 2025 incorporada en noviembre de 2026
 
 Ver [fuente versionada y sus huellas](data/fixtures/README.md) y [auditoría de F1–F4](docs/Auditoria_cierre_F1_F4_20261122.md). El CSV original filtrado de 62 columnas y su SHA-256 están publicados; **no confundir** con el dataset procesado de 68 columnas generado por F2 ni con el histórico de 48 columnas. El origen Excel se verificó con 260.307 registros y el mismo hash del trabajo anterior, pero la fecha y URL directas de descarga de ese ejemplar CNED 2005–2026 no están acreditadas.
+
+
+## Precisión final para la evaluación F4 (22/11/2026)
+
+- **Repositorio evaluable:** la rama `main` (no una rama antigua ni un PR abierto). El Excel de 260.307 filas permanece externo a GitHub; `data/fixtures/ip_2025_origen_filtrado.csv` es el subconjunto IP/2025 **original filtrado sin limpiar**, 4.731 × 62, con SHA-256. F2 genera el derivado de 68 columnas durante la reproducción limpia.
+- **Reproducción:** consultar los checks de GitHub Actions del commit que se entregue; los workflows ejecutan F1→F4 sobre el CSV publicado con tests en Ubuntu y Windows. El Excel completo solo se necesita para repetir además la extracción desde los 260.307 registros.
+- **Porcentajes sin ambigüedad:** Tecnología representa 44,68 %, Administración y Comercio 25,79 %, ambas áreas suman 70,47 % del total de 137.481; el CR3 de áreas (tres grupos) es 79,806 %. Ver `docs/Nota_F4_porcentajes_areas_20261122.md`.
+- **Entregables de Canvas:** el PDF final de Sumativa 3 y el video en Canvas Studio se entregan por la vía institucional, independientemente del repositorio. No afirmar video entregado, aprobación docente ni fecha/URL exacta del ejemplar XLSX mientras no exista evidencia.
