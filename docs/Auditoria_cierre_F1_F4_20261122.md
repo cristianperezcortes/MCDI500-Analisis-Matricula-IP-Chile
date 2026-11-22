@@ -56,3 +56,9 @@ Los apartados 9, 16 y 19 son encabezados, sin puntuación propia.
 6. Aprobar e integrar cambios verificables en la rama principal; repetir revisión después del merge. Una PR abierta no equivale a entrega.
 
 > Este registro no es una certificación de 150/150 ni un comprobante de Canvas. Los puntos pendientes están declarados para evitar que el informe afirme lo que la fuente o GitHub todavía no demuestran.
+
+## Actualización posterior: fuente reproducible desde GitHub
+
+Se examinó el libro XLSX suministrado por el grupo, cuyo SHA-256 coincide con la fuente de F1–F3. Se comprobó que contiene 260.307 registros y 62 columnas, y se extrajeron los 4.731 registros IP 2025 antes de cualquier transformación, publicados en `data/fixtures/ip_2025_origen_filtrado.csv`. Los agregados coinciden con 137.481 matrículas de primer año, 439.607 totales, CR3 y HHI. El CSV publicado tiene SHA-256 `dd5f92fd31edc9d5cea40a443646ed899a3857a8e018e78f003bc6de0705080d`.
+
+La automatización de esta rama incorpora ejecución integral F1–F4 y pruebas de integración sobre los datos reales filtrados, sin depender de un Excel guardado en el computador. **No afirmar éxito de CI hasta comprobar la última ejecución de Windows y Ubuntu**. Sigue abierta la evidencia documental de fecha/URL exactas de descarga y la entrega de video en Canvas.

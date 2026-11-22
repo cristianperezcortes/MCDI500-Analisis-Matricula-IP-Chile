@@ -89,6 +89,47 @@ def filtrar_ip_2025(datos: pd.DataFrame, anio: int = ANIO_ANALISIS) -> pd.DataFr
     ].copy().reset_index(drop=True)
 
 
+CSV_IP_2025_SHA256 = "dd5f92fd31edc9d5cea40a443646ed899a3857a8e018e78f003bc6de0705080d"
+XLSX_ORIGEN_SHA256 = "0439bc1ed1a6ec018a3bbf4be34861bd33749c81c34c2eeeddbc7dcd2657c48a"
+
+
+def cargar_subconjunto_ip_versionado(ruta_csv: str | Path, anio: int = ANIO_ANALISIS) -> tuple[pd.DataFrame, dict]:
+    """Lee el filtro CNED sin transformar publicado, verificando bytes y esquema.
+
+    Los campos originales no numéricos permanecen como texto, igual que al leer
+    el XML del Excel; solo las columnas declaradas numéricas se convierten.
+    La huella del CSV no sustituye ni se confunde con la del XLSX original.
+    """
+    ruta = Path(ruta_csv)
+    if not ruta.is_file():
+        raise FileNotFoundError(f"No se encuentra el subconjunto CNED: {ruta}")
+    digest = sha256_archivo(ruta)
+    if digest != CSV_IP_2025_SHA256:
+        raise ValueError("SHA-256 del subconjunto CSV distinta a la validada: no procesar")
+    df = pd.read_csv(ruta, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    if df.shape != (4731, 62) or len(set(df.columns)) != 62:
+        raise ValueError(f"Dimensiones/esquema inesperados en CSV IP 2025: {df.shape}")
+    df = df.replace("", None)
+    for columna in COLUMNAS_NUMERICAS:
+        if columna in df.columns:
+            df[columna] = pd.to_numeric(df[columna], errors="coerce")
+    if not df["Año"].eq(anio).all() or not df["Tipo Institución"].eq(TIPO_INSTITUCION).all():
+        raise ValueError("El CSV publicado no es exclusivamente IP del año solicitado")
+    if df["Matrícula Primer Año"].sum() != 137481 or df["Matrícula Total"].sum() != 439607:
+        raise ValueError("El subconjunto no reproduce los totales originales")
+    return df.reset_index(drop=True), {
+        "archivo_origen": ruta.name,
+        "sha256": digest,
+        "filas_origen": len(df),
+        "columnas_origen": df.shape[1],
+        "filas_filtradas": len(df),
+        "anio": anio,
+        "tipo_institucion": TIPO_INSTITUCION,
+        "fuente_filtrada": True,
+        "sha256_excel_que_lo_origino": XLSX_ORIGEN_SHA256,
+    }
+
+
 def cargar_cned_ip(ruta_excel: str | Path, anio: int = ANIO_ANALISIS) -> tuple[pd.DataFrame, dict]:
     """Extrae únicamente IP del año requerido mediante lectura XML incremental.
 
@@ -96,6 +137,8 @@ def cargar_cned_ip(ruta_excel: str | Path, anio: int = ANIO_ANALISIS) -> tuple[p
     convencional de un libro de más de 58 MB, sin comprometer verificabilidad.
     """
     ruta = Path(ruta_excel)
+    if ruta.suffix.lower() == ".csv":
+        return cargar_subconjunto_ip_versionado(ruta, anio=anio)
     if not ruta.is_file():
         raise FileNotFoundError(f"No se encuentra el Excel original: {ruta}")
     if ruta.suffix.lower() != ".xlsx":

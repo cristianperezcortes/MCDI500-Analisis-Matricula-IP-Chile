@@ -1,6 +1,6 @@
 # Fase 4 · Visualización y comunicación
 
-El notebook [F4_Visualizacion_Comunicacion.ipynb](F4_Visualizacion_Comunicacion.ipynb) genera las tres figuras de la Sumativa 3. Usa los [agregados de F2](../data/processed/README.md), los [metadatos F2](../docs/metadatos_fase2.json) y los [indicadores de concentración](../docs/indicadores_concentracion.csv) versionados. Las tres dimensiones concilian **137.481 matrículas de primer año**. F4 puede ejecutarse desde un clon con esos agregados. La reproducción previa de F1–F3 desde el origen requiere el Excel CNED.
+El notebook [F4_Visualizacion_Comunicacion.ipynb](F4_Visualizacion_Comunicacion.ipynb) genera las tres figuras de la Sumativa 3. Usa los [agregados de F2](../data/processed/README.md), los [metadatos F2](../docs/metadatos_fase2.json) y los [indicadores de concentración](../docs/indicadores_concentracion.csv) versionados. Las tres dimensiones concilian **137.481 matrículas de primer año**. F4 puede ejecutarse desde un clon con esos agregados. La reproducción previa de F1–F3 utiliza la fuente CNED validada: el subconjunto sin limpiar de 62 columnas publicado en `data/fixtures/` o, si está disponible, el Excel completo identificado mediante SHA-256.
 
 ## Ejecución
 
@@ -38,6 +38,6 @@ El comando siguiente **ejecuta de nuevo** las cuatro celdas de F4 usando `nbclie
 python scripts/verificar_f4_publicada.py
 ```
 
-El workflow GitHub Actions ejecuta ambas comprobaciones sobre Windows y Ubuntu tras un cambio. No necesita el Excel original para esta **subfase de comunicación**, pero **no certifica** la reproducción completa de F1–F3, que siguen requiriendo el origen CNED y su huella de integridad.
+El workflow GitHub Actions ejecuta ambas comprobaciones sobre Windows y Ubuntu tras un cambio. No necesita el Excel original para esta **subfase de comunicación**. La reproducción integral F1–F4 está automatizada adicionalmente usando el CSV CNED original filtrado publicado en `data/fixtures/`, y no debe confundirse con la verificación de los 260.307 registros del Excel completo.
 
 La auditoría de los 26 criterios está en [Auditoría de cierre F1–F4](../docs/Auditoria_cierre_F1_F4_20261122.md). El video Canvas Studio y la verificación de la plantilla oficial deben quedar acreditados antes de afirmar que la entrega final está cerrada.

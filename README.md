@@ -31,7 +31,8 @@ validar_dataset.py                  criterios mínimos de dataset
 tests/                              pruebas unitarias y de integración
 docs/                               informe, mapa, diccionario, metadatos, comparaciones
 evidencias/                         pruebas, auditoría y gráfico
-data/raw/                           Excel original (NO versionar; sin alterar)
+data/raw/                           Excel original opcional (no versionado)
+data/fixtures/                      Subconjunto CNED IP/2025 62 columnas con SHA-256
 data/interim/                       extracto filtrado generado exclusivamente en F2
 data/processed/                     CSV final e indicadores
 ```
@@ -81,23 +82,23 @@ python -m ipykernel install --user --name mcdi500-cned --display-name "Python 3.
 python -m notebook
 ```
 
-### Secuencia de las fases con el Excel original
+### Secuencia de reproducción con Excel original o CSV verificado en GitHub
 
-1. Colocar el archivo `Base-INDICES-Matricula-2005-2026.xlsx` en `data/raw/`, sin modificarlo.
+1. El clon ya contiene `data/fixtures/ip_2025_origen_filtrado.csv` (4.731 × 62) sin transformar, extraído del Excel original cuya huella SHA-256 está documentada. Si se dispone del libro original, situarlo sin modificar en `data/raw/`: se utilizará preferentemente.
 2. Ejecutar los notebooks F1 → F2 → F3 con **Restart Kernel and Run All Cells**, cada uno desde la raíz del repositorio o su carpeta.
 3. Ejecutar los controles:
 
 ```cmd
-python scripts/verificar_entorno.py --exigir-excel
+python scripts/verificar_entorno.py --exigir-fuente
 python -m pytest -q tests
 python scripts/verificar_proyecto.py
 python scripts/auditar_entrega_f3.py --integracion
 python scripts/auditar_consistencia_academica.py
 ```
 
-4. Para un ensayo que **no sobrescriba las métricas oficiales de Cristian**, ejecutar `python scripts/reproducir_desde_cero.py --ejecutar`. Crea y borra una copia temporal con la misma fuente original. Los tiempos de `timeit` varían por computador.
+4. Para una reproducción completa sin alterar el historial de mediciones de Cristian, ejecutar `python scripts/reproducir_desde_cero.py --ejecutar`. Repite F1–F4 en una carpeta temporal con el CSV publicado o, si está disponible, el Excel original. Para dejar derivados preparados para tests en CI usar `--mantener-derivados-ci`. Los tiempos de `timeit` varían por computador.
 
-**Dos niveles de evidencia:** GitHub Actions valida instalación y pruebas en Windows y Ubuntu desde checkout limpio, **sin** la fuente original; tres pruebas de datos reales se omiten explícitamente en GitHub. La reproducción con Excel y comprobación SHA-256 se hace localmente. No se atribuye una nota académica a ninguna prueba.
+**Evidencia diferenciada:** la CI de esta actualización ejecuta F1 → F2 → F3 → F4 y pruebas de integración contra el subconjunto CNED publicado, verificando su huella y sus 4.731 × 62 registros. Si se dispone del Excel íntegro identificado por SHA-256, también puede reproducirse el filtrado de los 260.307 registros originales. La URL y fecha exactas de descarga siguen pendientes de acreditación. La CI verde no reemplaza el control académico de Canvas.
 
 ## Decisiones y evidencia
 - La matrícula y los códigos originales no se imputan. Se conservan 1.576 ceros reales de matrícula de primer año.
@@ -116,9 +117,9 @@ La rama `main` integra las correcciones y la implementación F3; la entrega orig
 
 ## Sumativa 2 (F3) — ejecución y controles
 
-El notebook F3 está en `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb` y su informe final, en `docs/f3_s02_entregable_g8.pdf` (archivo nombrado con 20 caracteres antes de `.pdf`). Requiere ejecutar previamente F2 y disponer del Excel en `data/raw/`. Las pruebas incluyen herencia, polimorfismo, encapsulamiento, casos límite, equivalencia exacta del DataFrame F2/F3, `timeit` y `tracemalloc`; los resultados medidos están en `evidencias/f3_benchmarks.csv`. La auditoría interna adicional se ejecuta con `python scripts/auditar_entrega_f3.py` (sin Excel) o `python scripts/auditar_entrega_f3.py --integracion` (con los datos reales generados por F2).
+El notebook F3 está en `F3/S2_F3_NucleoAlgoritmico_Cned.ipynb` y su informe final, en `docs/f3_s02_entregable_g8.pdf` (archivo nombrado con 20 caracteres antes de `.pdf`). Requiere ejecutar previamente F2 y disponer de **una fuente CNED validada**, bien el Excel íntegro en `data/raw/` o el subconjunto original publicado en `data/fixtures/`. Las pruebas incluyen herencia, polimorfismo, encapsulamiento, casos límite, equivalencia exacta del DataFrame F2/F3, `timeit` y `tracemalloc`; los resultados medidos están en `evidencias/f3_benchmarks.csv`. La auditoría interna adicional se ejecuta con `python scripts/auditar_entrega_f3.py` (sin Excel) o `python scripts/auditar_entrega_f3.py --integracion` (con los datos reales generados por F2).
 
-El flujo `.github/workflows/validar_mcdi500.yml` ejecuta verificaciones sin Excel en GitHub Actions, incluida una prueba de integración F2–F3 sobre un dataset **sintético**. **Esta CI no sustituye la prueba real de integración** porque la fuente original no está en el repositorio. Para la validación completa deben ejecutar `python -m pytest -q tests` después de generar el extracto de F2.
+El flujo `.github/workflows/validar_mcdi500.yml` ejecuta la reproducción real F1–F4, comparación exacta F2–F3 y pruebas unitarias e integración en Windows y Ubuntu con el **subconjunto original 2025 versionado**. El libro Excel íntegro de 58 MB no se sube al repositorio y puede validarse por separado mediante su SHA-256.
 
 ## Precaución sobre indicadores de concentración
 
@@ -155,3 +156,7 @@ Se conservan los informes publicados anteriormente mediante el PR #13, para mant
 Las versiones finales interpretativas se incorporan mediante el PR #14, sin modificar los notebooks, el código Python ni los resultados analíticos previamente validados.
 
 La entrega oficial en Canvas se realiza de forma independiente.
+
+## Reproducibilidad IP 2025 incorporada en noviembre de 2026
+
+Ver [fuente versionada y sus huellas](data/fixtures/README.md) y [auditoría de F1–F4](docs/Auditoria_cierre_F1_F4_20261122.md). El CSV original filtrado de 62 columnas y su SHA-256 están publicados; **no confundir** con el dataset procesado de 68 columnas generado por F2 ni con el histórico de 48 columnas. El origen Excel se verificó con 260.307 registros y el mismo hash del trabajo anterior, pero la fecha y URL directas de descarga de ese ejemplar CNED 2005–2026 no están acreditadas.
