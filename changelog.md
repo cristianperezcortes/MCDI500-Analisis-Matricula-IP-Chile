@@ -1,5 +1,6 @@
 # Historial de cambios
 
+\n## 22 de noviembre de 2026 · Figura de contraste reproducible\n\n- Se incorpora una figura alternativa de puntos desde agregados F2, sin cambiar datos ni indicadores ([commit 3d4209f](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/3d4209f4d174303750ceeec5ac7c4c69a32c5a02)).\n- Se incluye prueba de generación real de la imagen desde clon limpio ([commit b93136b](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/b93136b2cdb52accaa44ba4c2064cca4629b0174)).\n- Se documenta la correspondencia con la figura previa, los objetivos y los porcentajes ([commit ee7a0df](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/ee7a0df85bc98a4d4e46b70bc953a2cf323a153d)).\n\n
 
 ## 22 de noviembre de 2026 · Revisión final de interpretación y trazabilidad F4
 
