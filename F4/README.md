@@ -27,3 +27,17 @@ La Figura 3 reproduce una variación de **39 matrículas (0,0284 %)** a partir d
 ## Validación de la integración
 
 La ejecución de las cuatro celdas en una sesión IPython nueva (Python 3.13.5) generó las tres figuras con los insumos versionados. La suite existente dio **55 pruebas aprobadas y 3 omitidas** en el clon sin los datos originales. Las omisiones corresponden al Excel CNED y al extracto que se obtiene al ejecutar F2 con ese Excel. El resultado de **58 aprobadas** corresponde a la ejecución separada de Windows con el extracto disponible.
+
+## Controles automáticos de F4 (22/11/2026)
+
+La suite `tests/test_f4_datos_publicados.py` comprueba independientemente los tres agregados versionados, las matrículas y registros conciliados con F2, los indicadores CR3 y HHI, la anomalía temporal de 39 matrículas y la presencia de evidencias ejecutadas.
+
+El comando siguiente **ejecuta de nuevo** las cuatro celdas de F4 usando `nbclient` y verifica la generación de sus tres figuras; no modifica el notebook almacenado en Git:
+
+```sh
+python scripts/verificar_f4_publicada.py
+```
+
+El workflow GitHub Actions ejecuta ambas comprobaciones sobre Windows y Ubuntu tras un cambio. No necesita el Excel original para esta **subfase de comunicación**, pero **no certifica** la reproducción completa de F1–F3, que siguen requiriendo el origen CNED y su huella de integridad.
+
+La auditoría de los 26 criterios está en [Auditoría de cierre F1–F4](../docs/Auditoria_cierre_F1_F4_20261122.md). El video Canvas Studio y la verificación de la plantilla oficial deben quedar acreditados antes de afirmar que la entrega final está cerrada.

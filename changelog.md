@@ -1,5 +1,14 @@
 # Historial de cambios
 
+## 22 de noviembre de 2026 · Validación autónoma F4
+
+- Se añadieron pruebas de integridad de agregados y metadatos de F2 para F4; commit [4b96457](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/4b9645702196e466311afdc3dd772076c6bb3fdf).
+- Se incorporó un ejecutor reproducible de notebook F4 usando `nbclient`; commit [617d954](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/617d954d4f03362c886637f5e89a59000fe0860b).
+- Se extendió CI para ejecutar F4 automáticamente en Windows y Ubuntu; commit [5db16c2](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/5db16c256c9d4487d89826b3fd578e200c9e0fde).
+- Se publicó auditoría de 26 criterios con brechas de fuente y entrega declaradas; commit [575e88f](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/575e88fa7548919f1fa722a4a0f1c7b87a998d1b).
+- Se explicaron los controles F4 en su README; commit [2e6deb6](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/2e6deb613d067457baae0740464849e4264ce297).
+
+
 ## 20 de noviembre de 2026 · Sumativa 3
 
 - Se integra el notebook ejecutable de F4 sobre los agregados de F2. Las figuras de región y área comparten escala en dos paneles. La comparación con y sin el registro de IP Santo Tomás reproduce el cálculo a partir del metadato de F2.
