@@ -101,3 +101,19 @@ def test_informe_f4_word_y_pdf_en_su_lugar_y_legibles():
     with ZipFile(word) as z:
         assert z.testzip() is None
         assert "word/document.xml" in z.namelist()
+
+
+
+def test_contrato_de_trazabilidad_f3_f4(metadatos):
+    evidencia = json.loads(
+        (RAIZ / "evidencias" / "f3_equivalencia_f2.json").read_text(encoding="utf-8")
+    )
+    assert evidencia["equivalencia_dataframe_exacto"] is True
+    assert evidencia["equivalencia_csv"] is True
+    assert evidencia["filas"] == metadatos["registros"] == 4731
+    assert evidencia["columnas"] == metadatos["columnas_finales"] == 68
+    assert evidencia["matricula_primer_anio"] == metadatos["matricula_primer_anio"]
+    assert evidencia["matricula_total"] == metadatos["matricula_total"]
+    notebook = nbformat.read(NOTEBOOK, as_version=4)
+    codigo = "\n".join(c.source for c in notebook.cells if c.cell_type == "code")
+    assert "f3_equivalencia_f2.json" in codigo
