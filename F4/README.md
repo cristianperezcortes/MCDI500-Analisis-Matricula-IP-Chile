@@ -41,3 +41,9 @@ python scripts/verificar_f4_publicada.py
 El workflow GitHub Actions ejecuta ambas comprobaciones sobre Windows y Ubuntu tras un cambio. No necesita el Excel original para esta **subfase de comunicación**, pero **no certifica** la reproducción completa de F1–F3, que siguen requiriendo el origen CNED y su huella de integridad.
 
 La auditoría de los 26 criterios está en [Auditoría de cierre F1–F4](../docs/Auditoria_cierre_F1_F4_20261122.md). El video Canvas Studio y la verificación de la plantilla oficial deben quedar acreditados antes de afirmar que la entrega final está cerrada.
+
+## Contrato documentado entre F3 y F4
+
+Además de recalcular los agregados de F2, F4 consulta `evidencias/f3_equivalencia_f2.json`, cuyo registro histórico confirma que el dataframe F3 se cotejó exactamente con F2 (4.731 × 68 y matrícula inalterada). Esta verificación evita afirmar continuidad de una transformación que no está disponible en los CSV agregados. Los tres gráficos se construyen con categorías y unidades originales; no es necesario ni correcto aplicar una inversión de escalamiento genérica a matrículas que nunca fueron reemplazadas por la escala derivada.
+
+**Límite:** este contrato es una prueba de coherencia documental versionada, no una nueva ejecución F1–F3 desde el XLSX original.
