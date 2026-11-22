@@ -29,7 +29,11 @@ jobs:
           python scripts/verificar_entorno.py
       - name: Validar sintaxis Python
         run: python -m compileall -q src tests scripts
-      - name: Pruebas portátiles sin Excel original
+      - name: Comprobar el origen CNED accesible y su SHA-256
+        run: python scripts/verificar_entorno.py --exigir-fuente
+      - name: Reproducir F1, F2, F3 y F4 en copia limpia con datos reales
+        run: python scripts/reproducir_desde_cero.py --ejecutar --mantener-derivados-ci
+      - name: Pruebas reales, portátiles y de equivalencia F2-F3
         run: python -m pytest -q tests --junitxml=evidencias/pytest_ci.xml
       - name: Auditoría F3 notebook/CSV/PDF
         run: python scripts/auditar_entrega_f3.py
@@ -44,4 +48,5 @@ jobs:
           name: pruebas-mcdi500-${{ matrix.os }}
           path: evidencias/pytest_ci.xml
 
-# CI omite tres pruebas que requieren el Excel original.
+# CI valida F1-F4 usando el subconjunto original IP 2025 versionado.
+# Cuando está disponible, el libro Excel original identificado por SHA-256 tiene prioridad.
