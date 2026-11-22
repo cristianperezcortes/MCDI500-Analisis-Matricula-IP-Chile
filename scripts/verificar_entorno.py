@@ -45,8 +45,8 @@ def verificar(exigir_excel=False, exigir_fuente=False):
             with csv.open("rb") as f:
                 for bloque in iter(lambda: f.read(1<<20), b""): h.update(bloque)
             sha_csv = h.hexdigest()
-            from src.cned_pipeline import CSV_IP_2025_SHA256
-            if sha_csv != CSV_IP_2025_SHA256:
+            esperado = "dd5f92fd31edc9d5cea40a443646ed899a3857a8e018e78f003bc6de0705080d"
+            if sha_csv != esperado:
                 errores.append("SHA-256 del CSV publicado no coincide con el validado")
     resultado={"correcto":not errores,"python":sys.version.split()[0],"interprete":sys.executable,"dependencias":req,"sha256_excel":sha,"sha256_csv_ip2025":sha_csv,"errores":errores}
     print(json.dumps(resultado,indent=2,ensure_ascii=False))
