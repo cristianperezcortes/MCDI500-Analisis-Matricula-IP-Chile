@@ -45,3 +45,12 @@ python scripts/verificar_f4_publicada.py
 El workflow GitHub Actions ejecuta ambas comprobaciones sobre Windows y Ubuntu tras un cambio. No necesita el Excel original para esta **subfase de comunicación**. La reproducción integral F1–F4 está automatizada adicionalmente usando el CSV CNED original filtrado publicado en `data/fixtures/`, y no debe confundirse con la verificación de los 260.307 registros del Excel completo.
 
 La auditoría de los 26 criterios está en [Auditoría de cierre F1–F4](../docs/Auditoria_cierre_F1_F4_20261122.md). El video Canvas Studio y la verificación de la plantilla oficial deben quedar acreditados antes de afirmar que la entrega final está cerrada.
+
+
+## Nota de interpretación obligatoria para la presentación final
+
+**Tecnología sola**: 61.423 matrículas de primer año, **44,68 %** del total de 137.481. **Administración y Comercio sola**: 35.461 matrículas, **25,79 %**. **Ambas áreas juntas**: 96.884, **70,47 %**. En ninguna figura ni texto atribuir 70,47 % exclusivamente a Tecnología. El CR3 de áreas suma además Salud y asciende a 79,806 %; no debe confundirse con dos categorías.
+
+Ver [nota de cálculo](../docs/Nota_F4_porcentajes_areas_20261122.md) y los tests [porcentajes](../tests/test_f4_areas_precisas.py). Las tres figures F4 originales están respaldadas por los agregados CNED; las visualizaciones de apoyo audiovisual pueden variar de geometría sin variar valores ni denominadores.
+
+**Estado actual evaluable:** la rama oficial `main` contiene F1–F4, el CSV original IP 2025 no depurado de 62 columnas, el pipeline F2 que produce 68 columnas, y controles de integración reproducibles. El registro de 55 aprobadas y 3 omitidas de una etapa inicial es histórico, no corresponde a la ejecución final de 67 aprobadas por sistema ya registrada. La fecha y URL directas del ejemplar XLSX 2005–2026 siguen sin acreditación.
