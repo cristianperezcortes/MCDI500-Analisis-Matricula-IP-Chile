@@ -35,6 +35,8 @@ jobs:
         run: python scripts/reproducir_desde_cero.py --ejecutar --mantener-derivados-ci
       - name: Pruebas reales, portátiles y de equivalencia F2-F3
         run: python -m pytest -q tests --junitxml=evidencias/pytest_ci.xml
+      - name: Auditoría integral del proyecto sobre los datos reproducidos
+        run: python scripts/verificar_proyecto.py
       - name: Auditoría F3 notebook/CSV/PDF
         run: python scripts/auditar_entrega_f3.py
       - name: Auditoría académica F1/F2
