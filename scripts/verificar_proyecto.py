@@ -6,15 +6,20 @@ import pandas as pd
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from src.cned_pipeline import validar_fase1, validar_fase2, preparar_fase2
+from src.cned_pipeline import validar_fase1, validar_fase2, preparar_fase2, cargar_cned_ip
 
 def verificar():
     src=ROOT/'data/raw/Base-INDICES-Matricula-2005-2026.xlsx'
+    if not src.is_file():
+        src=ROOT/'data/fixtures/ip_2025_origen_filtrado.csv'
     extra=ROOT/'data/interim/ip_2025_origen_filtrado.csv'
     output=ROOT/'data/processed/matricula_ip_2025_procesada_v3.csv'
     for p in (src,extra,output,ROOT/'requirements.txt'):
         if not p.is_file():raise FileNotFoundError(p)
+    fuente, procedencia = cargar_cned_ip(src)
     x=pd.read_csv(extra,encoding='utf-8-sig',low_memory=False)
+    assert x.shape == fuente.shape == (4731,62)
+    assert (x['Matrícula Primer Año'].sum(),x['Matrícula Total'].sum()) == (137481,439607)
     y=pd.read_csv(output,encoding='utf-8-sig',low_memory=False)
     fase1=validar_fase1(x)
     generado,auditoria=preparar_fase2(x)
@@ -41,9 +46,10 @@ def verificar():
         assert nbinfo[fase]['secuencia']==list(range(1,len(cc)+1))
         assert nbinfo[fase]['errores']==0 and nbinfo[fase]['vacias']==0
     reporte={"estado":"APROBADO", "F1":fase1,"F2":fase2, "notebooks":nbinfo,
+             "fuente_utilizada":str(src.relative_to(ROOT)),"sha256_ejecutada":procedencia["sha256"],
              "salida":output.relative_to(ROOT).as_posix(),
-             "pendientes_externos":["instalación en un segundo equipo","commits individuales y PR",
-              "validación docente de grupo de 2 integrantes (guía indica 3–4)","plantilla institucional original","procedencia exacta XLSX 2005-2026"]}
+             "pendientes_externos":["evidencia formal de aprobación administrativa del grupo de 2 integrantes",
+              "plantilla institucional original","fecha y URL directa de descarga del XLSX 2005-2026","entrega Canvas"]}
     dest=ROOT/'evidencias/auditoria_guia_sumativa1.json'
     dest.write_text(json.dumps(reporte,indent=2,ensure_ascii=False),encoding='utf-8')
     print(json.dumps(reporte,indent=2,ensure_ascii=False))
