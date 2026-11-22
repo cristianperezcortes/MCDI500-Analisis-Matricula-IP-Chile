@@ -1,5 +1,14 @@
 # Historial de cambios
 
+
+## 22 de noviembre de 2026 · Revisión final de interpretación y trazabilidad F4
+
+- Validación automática de las cifras individuales y conjuntas de Tecnología y Administración y Comercio, sin confundir el 44,68 % con el 70,47 % (commit [fc27ba8](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/fc27ba878e109485b79ef451418c4e0041e4d051)).
+- Nota metodológica de denominadores, CR3 y HHI de áreas (commit [da4e7d5](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/da4e7d54b6268abaea2ac362a7e23c16b859758b)).
+- Relevancia externa del problema delimitada en F1 (commit [a92ccac](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/a92ccaca531fc29aa1d0f13214d7537a905de7ea)).
+- Interpretación de F4 corregida: 61.423 (44,68 %) en Tecnología y 96.884 (70,47 %) en Tecnología + Administración y Comercio (commit [00ddf11](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/commit/00ddf11ffefd1ce6e0ae1b7b165660b0733009e9)).
+
+
 ## 22 de noviembre de 2026 · Reproducibilidad integral con datos CNED reales
 
 | Mejora aplicada | Justificación y evidencia | Commit |
