@@ -82,3 +82,22 @@ def test_notebook_f4_ejecutado_sin_errores_y_con_tres_figuras():
         ruta = RAIZ / "evidencias" / nombre
         assert ruta.exists() and ruta.stat().st_size > 5000
         assert ruta.read_bytes()[:8] == bytes.fromhex("89504e470d0a1a0a")
+
+
+
+def test_informe_f4_word_y_pdf_en_su_lugar_y_legibles():
+    """Evita un PDF que supere el límite de la guía o binarios dañados."""
+    from zipfile import ZipFile
+    from pypdf import PdfReader
+
+    pdf = RAIZ / "docs" / "f4_s03_entregable_g8.pdf"
+    word = RAIZ / "docs" / "f4_s03_entregable_g8.docx"
+    assert pdf.is_file() and pdf.stat().st_size > 10000
+    assert word.is_file() and word.stat().st_size > 10000
+    lector = PdfReader(str(pdf))
+    assert 1 <= len(lector.pages) <= 10, "La guía limita el informe a 10 páginas"
+    contenido = " ".join(p.extract_text() or "" for p in lector.pages)
+    assert "2025" in contenido, "El informe debe identificar el año de análisis"
+    with ZipFile(word) as z:
+        assert z.testzip() is None
+        assert "word/document.xml" in z.namelist()
