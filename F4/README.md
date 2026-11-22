@@ -26,7 +26,11 @@ La Figura 3 reproduce una variación de **39 matrículas (0,0284 %)** a partir d
 
 ## Validación de la integración
 
-La ejecución de las cuatro celdas en una sesión IPython nueva (Python 3.13.5) generó las tres figuras con los insumos versionados. La suite existente dio **55 pruebas aprobadas y 3 omitidas** en el clon sin los datos originales. Las omisiones corresponden al Excel CNED y al extracto que se obtiene al ejecutar F2 con ese Excel. El resultado de **58 aprobadas** corresponde a la ejecución separada de Windows con el extracto disponible.
+**Evidencia histórica del 20/11:** la ejecución inicial de F4 guardó cuatro celdas consecutivas y tres figuras; entonces las pruebas portátiles registraron **55 aprobadas y 3 omitidas**, y una ejecución local independiente en Windows documentó 58 aprobadas. Estos resultados son antecedentes, **no el estado técnico actual**.
+
+**Verificación vigente del 22/11 (rama `main`, commit `c3c2c0b41bfe3ae644853fd4d93a571f7083f772`):** el flujo [GitHub Actions 45031068962](https://github.com/cristianperezcortes/MCDI500-Analisis-Matricula-IP-Chile/actions/runs/45031068962) finalizó exitosamente en Windows y Ubuntu. Ejecutó F1, F2, F3 y F4 desde clon limpio con el subconjunto CNED IP 2025 de 62 columnas publicado y verificado por SHA-256, además de **67 pruebas aprobadas y 0 omitidas por sistema**. La comprobación de la huella del XLSX completo sigue siendo independiente de la procedencia documental (fecha y enlace directos pendientes).
+
+**Presentación audiovisual:** cualquier rediseño gráfico de los mismos agregados debe indicar que conserva los valores del notebook F4. Para el video, usar títulos que comuniquen resultados, interpretación y límites; las cifras no deben diferir entre PowerPoint, informe y notebook.
 
 ## Controles automáticos de F4 (22/11/2026)
 
