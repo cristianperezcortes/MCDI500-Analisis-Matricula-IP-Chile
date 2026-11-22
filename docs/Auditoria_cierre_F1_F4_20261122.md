@@ -8,7 +8,7 @@
 
 - La rama de F4 contiene `F4/F4_Visualizacion_Comunicacion.ipynb` con cuatro celdas de código y numeración guardada 1–4; tres imágenes, informe Word y PDF, README y changelog.
 - Los CSV agregados por institución, región y área están versionados; permiten comunicar el universo IP/2025 mediante 4.731 registros y 137.481 matrículas de primer año. El notebook F4 compara CR3 y HHI con el documento de F2.
-- `data/processed/matricula_ip_2025_procesada.csv` pertenece a la entrega histórica de **48 columnas**; **NO** debe presentarse como el dataset vigente F2 de 68 columnas. El CSV v3 de 68 columnas y el libro Excel original no figuran en los árboles de Git examinados.
+- `historico/data/processed/matricula_ip_2025_procesada.csv` conserva la entrega histórica de **48 columnas**, separada físicamente en la rama de cierre; **NO** es el dataset vigente F2 de 68 columnas. El CSV v3 de 68 columnas y el libro Excel original no figuran en los árboles de Git examinados.
 - F1 y F2 exigen `data/raw/Base-INDICES-Matricula-2005-2026.xlsx`; los agregados publicados **no permiten** repetir toda la limpieza, imputación ni equivalencia F2/F3 desde cero.
 - La fuente institucional se atribuye a CNED–INDICES; **fecha y URL exactas de la copia 2005–2026 siguen sin acreditación**.
 - Las pruebas portátiles F1–F3 existen y están automatizadas; en esta rama se añaden pruebas específicas de F4 y ejecución real del notebook mediante `nbclient` dentro de CI.
@@ -50,7 +50,7 @@ Los apartados 9, 16 y 19 son encabezados, sin puntuación propia.
 
 1. Validar nuevo workflow de CI Windows/Ubuntu con `scripts/verificar_f4_publicada.py` y `tests/test_f4_datos_publicados.py`; registrar enlace de las ejecuciones.
 2. Conseguir el archivo de origen con SHA-256 `0439bc1ed1a6ec018a3bbf4be34861bd33749c81c34c2eeeddbc7dcd2657c48a` **o** la ruta/fecha exactas y trazables; reproducir F1→F2→F3. No reemplazar fuente por un CSV histórico.
-3. Separar o archivar versiones históricas de F1/F2 y CSV de 48 columnas, actualizando cuidadosamente rutas y evidencia.
+3. **Implementado en rama de cierre:** los notebooks F1/F2 históricos y el CSV de 48 columnas se reubicaron en `historico/` conservando los blobs Git originales; README, docs/README_VERSIONES.md y data/processed/README.md actualizados. La integración final requiere CI verde y merge.
 4. Confirmar que el PDF final respeta plantilla, 29 apartados, máximo 10 páginas y APA 7. El informe existente se somete a contraste, no a afirmación automática de conformidad.
 5. Insertar URL de video Canvas Studio, acreditar participación auténtica y confirmar aceptación administrativa del Grupo 8.
 6. Aprobar e integrar cambios verificables en la rama principal; repetir revisión después del merge. Una PR abierta no equivale a entrega.
